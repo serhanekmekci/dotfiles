@@ -1,0 +1,23 @@
+#!/bin/sh
+
+case $BUTTON in
+	1) pamixer -t;;
+	3) setsid -f "$TERMINAL" -e pulsemixer;;
+	4) pamixer -i 1;;
+	5) pamixer -d 1;;
+	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0";;
+esac
+
+[ $(pamixer --get-mute) = true ] && echo  && exit
+
+vol="$(pamixer --get-volume)"
+
+if [ "$vol" -gt "70" ]; then
+	icon=""
+elif [ "$vol" -lt "30" ]; then
+	icon=""
+else
+	icon=""
+fi
+
+echo "$icon $vol%"

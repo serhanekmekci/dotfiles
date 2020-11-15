@@ -1,0 +1,4 @@
+#!/bin/sh
+
+SELECTED=$(printf "Reboot\\nShutdown\\nHibernate\\nLock\\nReboot to certain grub entry" | dmenu -i -p "" -c -g 2 -l 3)
+

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case $BUTTON in
+		1) setsid -f "$TERMINAL" -e "zsh -c fzf";;
+        6) setsid -f "$TERMINAL" -e "$EDITOR" "$0";;
+esac
+
+WINDOWS_MNTPNT="/mnt/Windows/"
+WINDOWS_LN=" Windows $(df -h "$WINDOWS_MNTPNT" | awk 'FNR == 2 {print $2}')/$(df -h "$WINDOWS_MNTPNT" | awk 'FNR == 2 {print $3}')"
+
+echo $WINDOWS_LN

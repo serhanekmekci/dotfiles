@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# toggling wallpaper (gray and dynamic)
+DW_STAT=$(cat $SVDIR/dynamic_wallpaper/supervise/stat)
+if [ "$DW_STAT" = "run" ]
+then
+change_mode dark &
+sv stop dynamic_wallpaper &&
+xwallpaper --maximize $HOME/.local/share/wallpapers/gray.jpg
+else
+sv restart dynamic_wallpaper
+fi
+
+dwmc togglebar &
+
+# goyo and syntax off for all nvim instances
+if ls /tmp/nvimsocket-* 1> /dev/null 2>&1; then
+cmdvim "Goyo | set linebreak" &&
+cmdvim "if exists(\"g:syntax_on\") | syntax off | else | syntax on | endif"
+fi

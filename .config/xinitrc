@@ -1,0 +1,8 @@
+#!/bin/sh
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+
+. ~/.config/xprofile
+
+while :; do
+	ssh-agent dwm
+done

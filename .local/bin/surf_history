@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cat $XDG_CACHE_HOME/surf/history.txt | awk '{print $NF}' | dmenu -b -g 1 -l 5

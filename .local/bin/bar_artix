@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case $BUTTON in
+        6) setsid -f "$TERMINAL" -e "$EDITOR" "$0";;
+esac
+
+# ARTIX
+
+ARTIX_MNTPNT=/
+ARTIX_LN=" Artix $(df -h $ARTIX_MNTPNT | awk 'FNR == 2 {print $2}')/$(df -h $ARTIX_MNTPNT | awk 'FNR == 2 {print $3}')"
+echo $ARTIX_LN

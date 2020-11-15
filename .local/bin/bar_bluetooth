@@ -1,0 +1,6 @@
+#!/bin/sh
+
+case $BUTTON in
+		1) setsid -f "$TERMINAL" -e bluetoothctl;;
+        6) setsid -f "$TERMINAL" -e "$EDITOR" "$0";;
+esac

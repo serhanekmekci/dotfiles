@@ -1,0 +1,5 @@
+#!/bin/sh
+
+xkb-switch -n
+
+pkill -RTMIN+3 dwmblocks

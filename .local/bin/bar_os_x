@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $BUTTON in
+        6) setsid -f "$TERMINAL" -e "$EDITOR" "$0";;
+esac
+
+OS_X_MNTPNT="/mnt/OS X/"
+OS_X_LN=" OS X $(df -h "$OS_X_MNTPNT" | awk 'FNR == 2 {print $2}')/$(df -h "$OS_X_MNTPNT" | awk 'FNR == 2 {print $3}')"
+
+echo $OS_X_LN

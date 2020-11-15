@@ -1,0 +1,20 @@
+ctrl + k + b
+	switch_xkbdlayout
+XF86AudioMute
+	pamixer -t; pkill -RTMIN+4 blocks
+XF86Audio{Raise,Lower}Volume
+	pamixer {-i,-d} 1; pkill -RTMIN+4 blocks
+super + shift + l
+	slock
+super + shift + t
+	change_mode
+super + shift + s
+	sensory_overload
+super + shift + p
+	passmenu --type
+super + shift + b
+	tabbedsurf
+super + shift + m
+	$TERMINAL -e neomutt
+super + shift + e
+	externalpipe_buffer.sh dmenu_type

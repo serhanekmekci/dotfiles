@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/serhan/.config/zsh/.oh-my-zsh'
+let g:netrw_dirhist_7='/home/serhan/.config/zsh'
+let g:netrw_dirhist_6='/home/serhan/.local/bin'
+let g:netrw_dirhist_5='/home/serhan/a-better-ligaturizer/input-fonts'
+let g:netrw_dirhist_4='/home/serhan/.config/configstore'
+let g:netrw_dirhist_3='/home/serhan/.config'
+let g:netrw_dirhist_2='/etc/default'
+let g:netrw_dirhist_1='/etc/grub.d'

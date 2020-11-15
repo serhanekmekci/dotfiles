@@ -1,0 +1,4 @@
+#!/bin/sh
+# This script determines screen DPI value and setting the value in Xresources.
+DPI=`xdpyinfo | grep resolution: | grep -Eo '[0-9]{1,}' | tail -n 1`
+sed -i "s/Xft.dpi:.*/Xft.dpi: $DPI/" ~/.config/Xresources

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+LAYOUT="$(xkb-switch)"
+
+case $BUTTON in
+	1) switch_xkbdlayout;;
+	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0";;
+esac
+
+if [ $LAYOUT == "tr" ]
+then
+  echo "Turkish"
+elif [ $LAYOUT == "de" ]
+then
+  echo "Deutsch"
+else
+  echo "Turkish"
+fi

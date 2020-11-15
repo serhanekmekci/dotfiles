@@ -1,0 +1,145 @@
+#!/bin/sh
+
+ALWAYS="
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.dpi: 96
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+/* DMENU */
+dmenu.font:Fira Code:style=Regular:size=12
+
+/* ST */
+st.font:Iosevka:style=Regular:size=13
+
+/* ! Dracula Xresources palette */
+*.color0:     #000000
+*.color1:     #FF5555
+*.color2:     #50FA7B
+*.color3:     #F1FA8C
+*.color4:     #BD93F9
+*.color5:     #FF79C6
+*.color6:     #8BE9FD
+*.color7:     #BFBFBF
+
+*.color8:     #4D4D4D
+*.color9:     #FF6E67
+*.color10:    #5AF78E
+*.color11:    #F4F99D
+*.color12:    #CAA9FA
+*.color13:    #FF92D0
+*.color14:    #9AEDFE
+*.color15:    #E6E6E6
+
+*.foreground: #f8f8f2
+"
+
+DARK_MODE="
+/* DARK MODE */
+dwm.normbgcolor: #000000
+dwm.normbordercolor: #000000
+dwm.normfgcolor: #ffffff
+dwm.selfgcolor: #000000
+dwm.selbordercolor: #ffffff
+dwm.selbgcolor: #ffffff
+
+dmenu.background: #000000
+dmenu.foreground: #ababab
+dmenu.selbackground: #ffffff
+dmenu.selforeground:#000000
+*.background: #000000
+
+st.alpha: 0.70
+"
+
+LIGHT_MODE="
+/* LIGHT MODE */
+dwm.normbgcolor: #ffffff
+dwm.normbordercolor: #000000
+dwm.normfgcolor: #000000
+dwm.selfgcolor: #000000
+dwm.selbordercolor: #ababab
+dwm.selbgcolor: #ababab
+
+dmenu.background: #ffffff
+dmenu.foreground: #ababab
+dmenu.selbackground: #ababab
+dmenu.selforeground:#000000
+
+*.background: #282a36
+st.alpha: 0.85
+"
+
+if [ -f $1 ]
+then
+
+	PROMPT="$(echo -e "Light\nDark" | dmenu -p "Change mode to:" -i -g 2 -l 2 -c)"
+
+	if [ "$PROMPT" = "Light" ]
+	then
+		CHOOSED_CONFIG+="$ALWAYS $LIGHT_MODE"
+		echo "$CHOOSED_CONFIG" > $HOME/.Xresources &&
+		xrdb -merge $HOME/.Xresources &&
+		dwmc reload &&
+		kill -s USR1 $(pidof st) &&
+
+		if ls /tmp/nvimsocket-* 1> /dev/null 2>&1; then
+			cmdvim "AirlineTheme sol"
+		fi
+
+		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"sol"/' $HOME/.config/nvim/init.vim
+
+	elif [ "$PROMPT" = "Dark" ]
+	then
+		CHOOSED_CONFIG+="$ALWAYS $DARK_MODE"
+		echo "$CHOOSED_CONFIG" > $HOME/.Xresources &&
+		xrdb -merge $HOME/.Xresources &&
+		dwmc reload &&
+		kill -s USR1 $(pidof st) &&
+
+		if ls /tmp/nvimsocket-* 1> /dev/null 2>&1; then
+			cmdvim "AirlineTheme minimalist"
+		fi
+
+		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"minimalist"/' $HOME/.config/nvim/init.vim
+	fi
+
+else
+
+	if [ "$1" = "Light" -o "$1" = "light" ] ; then
+		CHOOSED_CONFIG+="$ALWAYS $LIGHT_MODE"
+		echo "$CHOOSED_CONFIG" > $HOME/.Xresources &&
+		xrdb -merge $HOME/.Xresources &&
+		dwmc reload &&
+		kill -s USR1 $(pidof st) &&
+
+		if ls /tmp/nvimsocket-* 1> /dev/null 2>&1; then
+			cmdvim "AirlineTheme sol"
+		fi
+
+		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"sol"/' $HOME/.config/nvim/init.vim
+
+	elif [ "$1" = "Dark" -o "$1" = "dark" ] ; then
+		CHOOSED_CONFIG+="$ALWAYS $DARK_MODE"
+		echo "$CHOOSED_CONFIG" > $HOME/.Xresources &&
+		xrdb -merge $HOME/.Xresources &&
+		dwmc reload &&
+		kill -s USR1 $(pidof st) &&
+
+		if ls /tmp/nvimsocket-* 1> /dev/null 2>&1; then
+			cmdvim "AirlineTheme minimalist"
+		fi
+
+		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"minimalist"/' $HOME/.config/nvim/init.vim
+
+	elif [ "$1" = "toggle" -o "$1" = "Toggle" ] ; then
+		if grep -q "DARK MODE" $HOME/.Xresources
+		then
+			change_mode light
+		else
+			change_mode dark
+		fi
+	fi
+fi

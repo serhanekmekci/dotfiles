@@ -1,0 +1,6 @@
+#!/bin/sh -l
+
+export DISPLAY=:0
+export XAUTHORITY=/run/user/1000/Xauthority
+
+exec unclutter

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+case $BUTTON in
+        6) setsid -f "$TERMINAL" -e "$EDITOR" "$0";;
+esac
+
+INTERFACE="wlp41s0"
+STATUS=$(cat /sys/class/net/$INTERFACE/operstate)
+
+if [ $STATUS == "up" ]
+then
+   SSID=$(get_essid $INTERFACE)
+   SIGNAL_PERCENTAGE=$(awk 'FNR == 3 {print $3-1}' /proc/net/wireless)
+
+   echo " $SSID %$SIGNAL_PERCENTAGE"
+else
+   echo " No Connection"
+fi

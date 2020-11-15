@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export DISPLAY=:0
+export XAUTHORITY=$HOME/.Xauthority
+
+exec start-pulseaudio-x11
