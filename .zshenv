@@ -1,1 +1,1 @@
-/home/serhan/.local/src/dotfiles/.config/zsh/zshenv
+zshenv

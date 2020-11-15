@@ -1,1 +1,0 @@
-/home/serhan/.local/src/dotfiles/.config/xinitrc
