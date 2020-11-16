@@ -80,8 +80,8 @@ then
 	if [ "$PROMPT" = "Light" ]
 	then
 		CHOOSED_CONFIG+="$ALWAYS $LIGHT_MODE"
-		echo "$CHOOSED_CONFIG" > $HOME/.Xresources &&
-		xrdb -merge $HOME/.Xresources &&
+		echo "$CHOOSED_CONFIG" > $HOME/.config/X11/Xresources &&
+		xrdb -merge $HOME/.config/X11/Xresources &&
 		dwmc reload &&
 		kill -s USR1 $(pidof st) &&
 
@@ -94,8 +94,8 @@ then
 	elif [ "$PROMPT" = "Dark" ]
 	then
 		CHOOSED_CONFIG+="$ALWAYS $DARK_MODE"
-		echo "$CHOOSED_CONFIG" > $HOME/.Xresources &&
-		xrdb -merge $HOME/.Xresources &&
+		echo "$CHOOSED_CONFIG" > $HOME/.config/X11/Xresources &&
+		xrdb -merge $HOME/.config/X11/Xresources &&
 		dwmc reload &&
 		kill -s USR1 $(pidof st) &&
 
@@ -110,8 +110,8 @@ else
 
 	if [ "$1" = "Light" -o "$1" = "light" ] ; then
 		CHOOSED_CONFIG+="$ALWAYS $LIGHT_MODE"
-		echo "$CHOOSED_CONFIG" > $HOME/.Xresources &&
-		xrdb -merge $HOME/.Xresources &&
+		echo "$CHOOSED_CONFIG" > $HOME/.config/X11/Xresources &&
+		xrdb -merge $HOME/.config/X11/Xresources &&
 		dwmc reload &&
 		kill -s USR1 $(pidof st) &&
 
@@ -123,8 +123,8 @@ else
 
 	elif [ "$1" = "Dark" -o "$1" = "dark" ] ; then
 		CHOOSED_CONFIG+="$ALWAYS $DARK_MODE"
-		echo "$CHOOSED_CONFIG" > $HOME/.Xresources &&
-		xrdb -merge $HOME/.Xresources &&
+		echo "$CHOOSED_CONFIG" > $HOME/.config/X11/Xresources &&
+		xrdb -merge $HOME/.config/X11/Xresources &&
 		dwmc reload &&
 		kill -s USR1 $(pidof st) &&
 
@@ -135,7 +135,7 @@ else
 		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"minimalist"/' $HOME/.config/nvim/init.vim
 
 	elif [ "$1" = "toggle" -o "$1" = "Toggle" ] ; then
-		if grep -q "DARK MODE" $HOME/.Xresources
+		if grep -q "DARK MODE" $HOME/.config/X11/Xresources
 		then
 			change_mode light
 		else
