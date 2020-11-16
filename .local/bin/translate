@@ -1,0 +1,5 @@
+#!/bin/sh
+
+selection=$(xclip -o -selection primary)
+
+surf https://www.duden.de/suchen/dudenonline/$selection

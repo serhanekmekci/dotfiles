@@ -91,6 +91,8 @@ then
 
 		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"sol"/' $HOME/.config/nvim/init.vim
 
+		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-2.0/gtkrc-2.0
+
 	elif [ "$PROMPT" = "Dark" ]
 	then
 		CHOOSED_CONFIG+="$ALWAYS $DARK_MODE"
@@ -104,6 +106,8 @@ then
 		fi
 
 		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"minimalist"/' $HOME/.config/nvim/init.vim
+
+		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-2.0/gtkrc-2.0
 	fi
 
 else
@@ -121,6 +125,8 @@ else
 
 		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"sol"/' $HOME/.config/nvim/init.vim
 
+		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-2.0/gtkrc-2.0
+
 	elif [ "$1" = "Dark" -o "$1" = "dark" ] ; then
 		CHOOSED_CONFIG+="$ALWAYS $DARK_MODE"
 		echo "$CHOOSED_CONFIG" > $HOME/.config/X11/Xresources &&
@@ -133,6 +139,8 @@ else
 		fi
 
 		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"minimalist"/' $HOME/.config/nvim/init.vim
+
+		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-2.0/gtkrc-2.0
 
 	elif [ "$1" = "toggle" -o "$1" = "Toggle" ] ; then
 		if grep -q "DARK MODE" $HOME/.config/X11/Xresources
