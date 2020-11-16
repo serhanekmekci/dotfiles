@@ -18,3 +18,5 @@ super + shift + m
 	$TERMINAL -e neomutt
 super + shift + e
 	externalpipe_buffer.sh dmenu_type
+super + shift + n
+	$TERMINAL -e newsboat
