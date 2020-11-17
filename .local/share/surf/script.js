@@ -46,7 +46,7 @@ keyboardButtons()
     numberToLabel(n)
     {
         ++n;
-        const alphabet = "abcdefghijklmnopqstuvwxyz";
+        const alphabet = "abcçdefgğhıijmnoöpqsştüvxyz";
         /* r is removed as it reloads keyboardButtons */
 
         var str = "";
