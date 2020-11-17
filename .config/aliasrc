@@ -6,3 +6,6 @@ alias \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	nvim="NVIM_LISTEN_ADDRESS="/tmp/nvimsocket-"$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)"" nvim" \
+	ssh="ssh -F $SSH_CONFIG -i $SSH_ID -o UserKnownHostsFile=$SSH_KNOWN_HOSTS" \
+	ssh-copy-id="ssh-copy-id -i $SSH_ID -o UserKnownHostsFile=$SSH_KNOWN_HOSTS" \
+	scp="scp -F $SSH_CONFIG -i $SSH_ID -o UserKnownHostsFile=$SSH_KNOWN_HOSTS" \

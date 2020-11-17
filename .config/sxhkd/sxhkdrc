@@ -13,7 +13,7 @@ super + shift + s
 super + shift + p
 	passmenu --type
 super + shift + b
-	tabbedsurf
+	surf-open
 super + shift + m
 	$TERMINAL -e neomutt
 super + shift + e

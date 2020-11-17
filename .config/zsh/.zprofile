@@ -9,9 +9,11 @@ export ZDOTDIR="$HOME/.config/zsh"
 export EDITOR="nvim"
 export TERMINAL="st"
 export READER="zathura"
-export BROWSER="surf"
+export BROWSER="surf-open"
 
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+. $HOME/.dbus/session-bus/$(cat /etc/machine-id)-0;
+export DBUS_SESSION_BUS_ADDRESS
+export DBUS_SESSION_BUS_PID;
 
 #########################
 ##History Configuration##
@@ -48,6 +50,10 @@ export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
 export UNISON="${XDG_DATA_HOME:-$HOME/.local/share}/unison"
+
+export SSH_CONFIG="${XDG_CONFIG_HOME}/ssh/config"
+export SSH_ID="${XDG_CONFIG_HOME}/ssh/id_rsa"
+export SSH_KNOWN_HOSTS="${XDG_CONFIG_HOME}/ssh/known_hosts"
 
 ###########
 ##START X##

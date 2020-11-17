@@ -64,7 +64,7 @@ dwm.selbordercolor: #ababab
 dwm.selbgcolor: #ababab
 
 dmenu.background: #ffffff
-dmenu.foreground: #ababab
+dmenu.foreground: #000000
 dmenu.selbackground: #ababab
 dmenu.selforeground:#000000
 
