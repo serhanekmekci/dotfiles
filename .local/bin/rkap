@@ -2,9 +2,9 @@
 
 HOST=$(cat /etc/hostname)
 
-rsync -urPv "$HOME/.local/share/gnupg" "rsync@vps0-debian.ekmekci.me:/home/rsync/rsync/$HOST/.local/share/"
+#rsync -urPv "$HOME/.local/share/gnupg" "rsync@vps0-debian.ekmekci.me:/home/rsync/rsync/$HOST/.local/share/"
 #rsync -urPv "$HOME/.local/share/password-store" "rsync@vps0-debian.ekmekci.me:/home/rsync/rsync/$HOST/.local/share/"
 
-rsync -urPv "$HOME/.ssh" "rsync@vps0-debian.ekmekci.me:/home/rsync/rsync/$HOST/"
+#rsync -urPv "$HOME/.ssh" "rsync@vps0-debian.ekmekci.me:/home/rsync/rsync/$HOST/"
 
 pass git push -u --all

@@ -6,13 +6,15 @@
 xidfile="/tmp/tabbed-surf.xid"
 uri=""
 
+[ -f $xidfile ] && pidof surf || rm $xidfile
+
 if [ "$#" -gt 0 ];
 then
 	uri="$1"
 fi
 
 runtabbed() {
-	tabbed -dn tabbed-surf -r 2 surf -e '' "$uri" >"$xidfile" \
+	tabbed -dcn tabbed-surf -r 2 surf -e '' "$uri" >"$xidfile" \
 		2>/dev/null &
 }
 

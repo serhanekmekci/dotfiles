@@ -1,5 +1,94 @@
 #!/bin/sh
 
-selection=$(xclip -o -selection primary)
+# Source config
+. $XDG_CONFIG_HOME/translaterc
 
-surf https://www.duden.de/suchen/dudenonline/$selection
+# Read clipboard choice from config
+[ $READ_FROM_PRIMARY == 1 ] && selection=$(xclip -o -se p) || selection=$(xclip -o -se c)
+
+identify_lang() {
+	identified_lang="$(trans -identify "$selection" | head -1 )"
+	# delete all unwanted chars coming from translate-shell
+	identified_lang=$(echo $identified_lang | tr -dc '[:alpha:]' | cut -c 2-)
+}
+
+pprint_dict()
+{
+    INPUT_DICT=("$@")
+    for DATA in "${INPUT_DICT[@]}" ; do
+        echo "${DATA%%:*}:${DATA##*:}"
+   done
+}
+
+pronounciation() {
+	identify_lang
+	echo $identified_lang
+
+	if pprint_dict "${PRONOUNCIATION_CHOICES[@]}" | grep -q "$identified_lang"
+	then
+		prn_chc=$(pprint_dict "${PRONOUNCIATION_CHOICES[@]}" | grep "$identified_lang")
+	else
+		prn_chc=$(pprint_dict "${PRONOUNCIATION_CHOICES[@]}" | grep "Default")
+	fi
+
+	prn_chc="$( cut -d ':' -f 2 <<< $prn_chc )"
+
+	# if selection is a sentence
+	if [[ "$selection" =~ ' ' ]]
+	then
+		IFS=' ' read -ra ADDR <<< "$selection"
+		for i in "${ADDR[@]}"; do
+			formatted_prnchc=$(printf "$prn_chc" "$i")
+			$BROWSER $formatted_prnchc
+		done
+	else
+		formatted_prnchc=$(printf "$prn_chc" "$selection")
+		$BROWSER $formatted_prnchc
+	fi
+}
+
+dict() {
+	identify_lang
+
+	#dct_chc=$(pprint_dict "${DICT_CHOICES[@]}" | grep "$identified_lang" || grep "Default")
+
+	if pprint_dict "${DICT_CHOICES[@]}" | grep -q "$identified_lang"
+	then
+		dct_chc=$(pprint_dict "${DICT_CHOICES[@]}" | grep "$identified_lang")
+	else
+		dct_chc=$(pprint_dict "${DICT_CHOICES[@]}" | grep "Default")
+	fi
+
+	dct_chc="$( cut -d ':' -f 2 <<< $dct_chc )"
+
+	# if selection is a sentence
+	if [[ "$selection" =~ ' ' ]]
+	then
+		IFS=' ' read -ra ADDR <<< "$selection"
+		for i in "${ADDR[@]}"; do
+
+			formatted_dctchc=$(printf "$dct_chc" "$i")
+			$BROWSER $formatted_dctchc
+		done
+	else
+		formatted_dctchc=$(printf "$dict_choice" "$selection")
+
+		$BROWSER $formatted_dctchc
+	fi
+
+}
+
+translation() {
+	trans "$selection" :"$TARGET"
+}
+
+exit_prompt() {
+	echo "Do something; hit [CTRL+C] to stop!"
+	tail -f /dev/null # most elegant way for do nothing
+}
+
+[ $TRANSLATION == 1 ] && translation
+[ $DICT == 1 ] && dict
+[ $PRONOUNCIATION == 1 ] && pronounciation
+
+exit_prompt
