@@ -38,6 +38,10 @@ bindkey '^ ' autosuggest-execute
 ##CONFIGURATION##
 #################
 
+# History
+setopt INC_APPEND_HISTORY_TIME
+setopt EXTENDED_HISTORY
+
 # Load aliases if existent.
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc"
 

@@ -1,0 +1,23 @@
+#!/bin/sh
+
+READ_FROM_PRIMARY=0 # if false it will read from clipboard
+
+PRONOUNCIATION=0
+
+TRANSLATION=0
+
+DICT=1
+
+TARGET=tr # language
+
+PRONOUNCIATION_CHOICES=(
+	"Default:searx.ekmekci.me/search?q=%s"
+	"English:forvo.com/search/%s/"
+    "Deutsch:forvo.com/search/%s/"
+)
+
+DICT_CHOICES=(
+	"Default:searx.ekmekci.me/search?q=%s"
+	"English:dictionary.cambridge.org/dictionary/english/%s"
+    "Deutsch:dictionary.cambridge.org/dictionary/german-english/%s"
+)

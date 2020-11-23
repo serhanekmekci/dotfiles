@@ -14,9 +14,13 @@ super + shift + p
 	passmenu --type
 super + shift + b
 	surf-open
+super + shift + Home
+	surf_history
 super + shift + m
 	$TERMINAL -e neomutt
 super + shift + e
-	externalpipe_buffer.sh dmenu_type
+	externalpipe_buffer dmenu_type
 super + shift + n
 	$TERMINAL -e newsboat
+super + shift + x
+	$TERMINAL -n translate -g 120x34 -e translate

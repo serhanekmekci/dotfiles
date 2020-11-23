@@ -19,13 +19,16 @@ export DBUS_SESSION_BUS_PID;
 ##History Configuration##
 #########################
 
-export HISTSIZE=100000               #How many lines of history to keep in memory
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
-export SAVEHIST=100000               #Number of history entries to save to disk
-export HISTDUP=erase               #Erase duplicates in the history file
-setopt    appendhistory     #Append history to the history file (no overwriting)
-setopt    sharehistory      #Share history across terminals
-setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
+export SAVEHIST=10000               # Number of history entries to save to disk
+export HISTSIZE=10000               # How many lines of history to keep in memory
+
+#setopt SHARE_HISTORY
+#setopt HIST_IGNORE_ALL_DUPS      # save only one command if 2 common are same and consistent
+#setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY_TIME  #Immediately append to the history file, not just when a term is killed
+setopt EXTENDED_HISTORY
+#export HISTDUP=erase               #Erase duplicates in the history file
 
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"

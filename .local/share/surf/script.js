@@ -46,7 +46,7 @@ keyboardButtons()
     numberToLabel(n)
     {
         ++n;
-        const alphabet = "abcçdefgğhıijmnoöpqsştüvxyz";
+        const alphabet = "abçdefgğimnoöpqsştüvxyz";
         /* r is removed as it reloads keyboardButtons */
 
         var str = "";
@@ -96,8 +96,8 @@ keyboardButtons()
             for (let id in labels) labels[id].elem.style.visibility = "visible";
             updateLabelColor();
         } else if (e.getModifierState(modKey)) {
-            if (e.key === escKey || e.key === 'r') {
-                if (e.key === 'r') createLabels(); /* reload labels */
+            if (e.key === escKey || e.key === 'c') {
+                if (e.key === 'c') createLabels(); /* reload labels */
                 input = "";
                 for (let id in labels) labels[id].elem.style.visibility = "hidden";
             } else if (e.key.length === 1) {
