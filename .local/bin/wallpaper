@@ -36,6 +36,6 @@ done
 
 MINUTE=$(date +%M)
 SECOND=$(date +%S)
-sleep $(((60-$MINUTE)*60 + (60-$SECOND)))
+sleep $(((60-$MINUTE-1)*60 + (60-$SECOND)))
 done
 fi

@@ -1,8 +1,3 @@
 #!/bin/sh
 
-SELECTED=$(cat $XDG_CACHE_HOME/surf/history.txt | tac | dmenu -b -g 1 -l 5 | awk '{print $3}')
-
-if [[ ${#SELECTED} -ge 1 ]]
-then
-	surf-open "$SELECTED"
-fi
+cat $XDG_CACHE_HOME/surf/history.txt | tac | dmenu -t -b -g 1 -l 20 | awk '{print $3}'

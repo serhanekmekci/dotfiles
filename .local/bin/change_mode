@@ -46,9 +46,15 @@ dwm.selbordercolor: #ffffff
 dwm.selbgcolor: #ffffff
 
 dmenu.background: #000000
-dmenu.foreground: #ababab
+dmenu.foreground: #ffffff
 dmenu.selbackground: #ffffff
 dmenu.selforeground:#000000
+
+dmenu.highlightbackground: #000000
+dmenu.higlightselbackground: #ffffff
+dmenu.highlightforeground: #8BE9FD
+dmenu.highlightselforeground: #005577
+
 *.background: #000000
 
 st.alpha: 0.70
@@ -68,6 +74,10 @@ dmenu.foreground: #000000
 dmenu.selbackground: #ababab
 dmenu.selforeground:#000000
 
+dmenu.highlightbackground: #ffffff
+dmenu.higlightselbackground: #ababab
+dmenu.highlightforeground: #005577
+dmenu.highlightselforeground:#005577
 *.background: #282a36
 st.alpha: 0.85
 "

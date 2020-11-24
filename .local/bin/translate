@@ -39,18 +39,16 @@ pronounciation() {
 		IFS=' ' read -ra ADDR <<< "$selection"
 		for i in "${ADDR[@]}"; do
 			formatted_prnchc=$(printf "$prn_chc" "$i")
-			$BROWSER $formatted_prnchc
+			$BROWSER $formatted_prnchc > /dev/null 2>&1
 		done
 	else
 		formatted_prnchc=$(printf "$prn_chc" "$selection")
-		$BROWSER $formatted_prnchc
+		$BROWSER $formatted_prnchc > /dev/null 2>&1
 	fi
 }
 
 dict() {
 	identify_lang
-
-	#dct_chc=$(pprint_dict "${DICT_CHOICES[@]}" | grep "$identified_lang" || grep "Default")
 
 	if pprint_dict "${DICT_CHOICES[@]}" | grep -q "$identified_lang"
 	then
@@ -68,12 +66,12 @@ dict() {
 		for i in "${ADDR[@]}"; do
 
 			formatted_dctchc=$(printf "$dct_chc" "$i")
-			$BROWSER $formatted_dctchc
+			$BROWSER $formatted_dctchc > /dev/null 2>&1
 		done
 	else
 		formatted_dctchc=$(printf "$dict_choice" "$selection")
 
-		$BROWSER $formatted_dctchc
+		$BROWSER $formatted_dctchc > /dev/null 2>&1
 	fi
 
 }
