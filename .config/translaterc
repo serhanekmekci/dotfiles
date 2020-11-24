@@ -2,13 +2,13 @@
 
 READ_FROM_PRIMARY=0 # if false it will read from clipboard
 
-PRONOUNCIATION=0
+PRONOUNCIATION=1
 
-TRANSLATION=0
+TRANSLATION=1
 
 DICT=1
 
-TARGET=tr # language
+TARGET=en # language
 
 PRONOUNCIATION_CHOICES=(
 	"Default:searx.ekmekci.me/search?q=%s"
