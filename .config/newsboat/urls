@@ -6,6 +6,8 @@ https://www.archlinux.org/feeds/news/
 https://github.com/serhanekmekci.private.atom?token=AMSQ5CB365R6NPCK4O23UYV5X77VE
 https://reddit.com/r/suckless.rss
 https://reddit.com/r/unixporn.rss
+https://cemkeylan.com/rss.xml
+https://suckless.org/atom.xml
 " "
 "---Git---"
 https://git.lukesmith.xyz/dotfiles/atom.xml

@@ -3,7 +3,7 @@ ctrl + k + b
 XF86AudioMute
 	pamixer -t; pkill -RTMIN+4 blocks
 XF86Audio{Raise,Lower}Volume
-	pamixer {-i,-d} 1; pkill -RTMIN+4 blocks
+	[ $(pamixer --get-mute) = false ] && pamixer {-i,-d} 1 && pkill -RTMIN+4 blocks && dunstify -t 200 -r 2593 -u normal "Volume $(pamixer --get-volume)%" || dunstify -t 300 "Muted"
 super + shift + l
 	slock
 super + shift + t

@@ -11,9 +11,9 @@ export TERMINAL="st"
 export READER="zathura"
 export BROWSER="surf-open"
 
-. $HOME/.dbus/session-bus/$(cat /etc/machine-id)-0;
-export DBUS_SESSION_BUS_ADDRESS
-export DBUS_SESSION_BUS_PID;
+#. $HOME/.dbus/session-bus/$(cat /etc/machine-id)-0;
+#export DBUS_SESSION_BUS_ADDRESS
+#export DBUS_SESSION_BUS_PID;
 
 #########################
 ##History Configuration##
