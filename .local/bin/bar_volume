@@ -1,16 +1,18 @@
 #!/bin/sh
 
+
 case $BUTTON in
 	1) pamixer -t;;
 	3) setsid -f "$TERMINAL" -e pulsemixer;;
-	4) pamixer -i 1;;
-	5) pamixer -d 1;;
+	4) [ $(pamixer --get-mute) = false ] && pamixer -i 1;;
+	5) [ $(pamixer --get-mute) = false ] && pamixer -d 1;;
 	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0";;
 esac
 
-[ $(pamixer --get-mute) = true ] && echo  && exit
+[ $(pamixer --get-mute) = true ] && echo  && dunstify -t 300 "Muted" && exit
 
 vol="$(pamixer --get-volume)"
+[ $(pamixer --get-mute) = false ] && dunstify -t 200 -r 2593 -u normal "Volume $vol%"
 
 if [ "$vol" -gt "70" ]; then
 	icon=""

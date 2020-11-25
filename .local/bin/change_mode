@@ -55,6 +55,9 @@ dmenu.higlightselbackground: #ffffff
 dmenu.highlightforeground: #8BE9FD
 dmenu.highlightselforeground: #005577
 
+dmenu.outbackground:#ffffff
+dmenu.outforeground:#000000
+
 *.background: #000000
 
 st.alpha: 0.70
@@ -78,6 +81,10 @@ dmenu.highlightbackground: #ffffff
 dmenu.higlightselbackground: #ababab
 dmenu.highlightforeground: #005577
 dmenu.highlightselforeground:#005577
+
+dmenu.outbackground:#ababab
+dmenu.outforeground:#000000
+
 *.background: #282a36
 st.alpha: 0.85
 "
