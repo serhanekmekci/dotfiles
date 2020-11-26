@@ -16,10 +16,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'bling/vim-airline'
 Plug 'vifm/vifm.vim'
-Plug 'Valloric/YouCompleteMe'
+Plug 'maralla/completor.vim'
 call plug#end()
-
-let g:loaded_youcompleteme = 1
 
 set bg=dark
 set go+=a
@@ -42,6 +40,7 @@ set noexpandtab
 set wildmode=longest,list,full
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd BufNewFile *.c 0r $XDG_DATA_HOME/nvim/skeleton.c
 
 map <leader>f :Goyo \| set linebreak<CR>
 
@@ -102,3 +101,9 @@ autocmd FileType tex inoremap ,lst \begin{lstlisting}<Enter><Enter>\end{lstlisti
 
 autocmd! User GoyoEnter nested set eventignore=FocusGained
 autocmd! User GoyoLeave nested set eventignore=
+
+let g:completor_clang_binary = '/usr/bin/clang'
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
