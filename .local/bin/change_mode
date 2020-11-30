@@ -12,7 +12,7 @@ Xft.lcdfilter: lcddefault
 dmenu.font:Fira Code:style=Regular:size=12
 
 /* ST */
-st.font:Iosevka:style=Regular:size=13
+st.font:Iosevka:style=Regular:size=14
 
 /* ! Dracula Xresources palette */
 *.color0:     #000000
@@ -34,6 +34,8 @@ st.font:Iosevka:style=Regular:size=13
 *.color15:    #E6E6E6
 
 *.foreground: #f8f8f2
+
+dwm.topbar: 1
 "
 
 DARK_MODE="
@@ -52,6 +54,7 @@ dmenu.selforeground:#000000
 
 dmenu.highlightbackground: #000000
 dmenu.higlightselbackground: #ffffff
+
 dmenu.highlightforeground: #8BE9FD
 dmenu.highlightselforeground: #005577
 
@@ -60,7 +63,7 @@ dmenu.outforeground:#000000
 
 *.background: #000000
 
-st.alpha: 0.70
+st.alpha: 0.60
 "
 
 LIGHT_MODE="
@@ -79,6 +82,7 @@ dmenu.selforeground:#000000
 
 dmenu.highlightbackground: #ffffff
 dmenu.higlightselbackground: #ababab
+
 dmenu.highlightforeground: #005577
 dmenu.highlightselforeground:#005577
 

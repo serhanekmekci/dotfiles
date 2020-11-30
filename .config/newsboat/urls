@@ -1,4 +1,3 @@
-" "
 "---Tech---"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)"
 https://lukesmith.xyz/rss.xml
@@ -9,16 +8,23 @@ https://reddit.com/r/unixporn.rss
 https://cemkeylan.com/rss.xml
 https://suckless.org/atom.xml
 https://projecteuler.net/rss2_euler.xml
+https://www.reddit.com/r/C_Programming.rss
 " "
 "---Git---"
 https://git.lukesmith.xyz/dotfiles/atom.xml
 https://git.suckless.org/dmenu/atom.xml
+https://github.com/LukeSmithxyz/dmenu/commits/master.atom
 https://git.suckless.org/dwm/atom.xml
+https://github.com/LukeSmithxyz/dwm/commits/master.atom
 https://git.suckless.org/st/atom.xml
+https://github.com/LukeSmithxyz/st/commits/master.atom
 https://git.suckless.org/surf/atom.xml
 https://git.suckless.org/tabbed/atom.xml
 https://git.suckless.org/slock/atom.xml
 https://github.com/torrinfail/dwmblocks/commits/master.atom
+https://github.com/LukeSmithxyz/mutt-wizard/commits/master.atom
+https://github.com/LukeSmithxyz/emailwiz/commits/master.atom
+
 " "
 "---Politics---"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCjsdYhMIQ0-fJPqEjiHYlzA
@@ -34,3 +40,5 @@ https://nitter.net/eksiseyler/rss
 https://notrelated.libsyn.com/rss
 https://reddit.com/r/composition.rss
 https://reddit.com/r/musictheory.rss
+https://serhan.ekmekci.me/rss.xml
+https://www.merlininkazani.com/rss.xml
