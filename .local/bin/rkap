@@ -1,10 +1,8 @@
 #!/bin/sh
 
-HOST=$(cat /etc/hostname)
+. $ZDOTDIR/.zprofile
+. $XDG_CONFIG_HOME/aliasrc
 
-#rsync -urPv "$HOME/.local/share/gnupg" "rsync@vps0-debian.ekmekci.me:/home/rsync/rsync/$HOST/.local/share/"
-#rsync -urPv "$HOME/.local/share/password-store" "rsync@vps0-debian.ekmekci.me:/home/rsync/rsync/$HOST/.local/share/"
+pass git push -u --all && ssh git@git.ekmekci.me 'git --git-dir=/var/www/git/password-store.git push --mirror git@github.com:serhanekmekci/password-store.git'
 
-#rsync -urPv "$HOME/.ssh" "rsync@vps0-debian.ekmekci.me:/home/rsync/rsync/$HOST/"
-
-pass git push -u --all
+git --git-dir="$GNUPGHOME/.git" add . && git --git-dir="$GNUPGHOME/.git" commit -m "$(date)" && git --git-dir="$GNUPGHOME/.git" push -u origin master && ssh git@git.ekmekci.me 'git --git-dir=/var/www/git/gnupg-data.git push --mirror git@github.com:serhanekmekci/gnupg-data.git'
