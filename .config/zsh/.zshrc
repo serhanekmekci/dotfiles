@@ -12,7 +12,7 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr 'S'
 zstyle ':vcs_info:*' unstagedstr 'U'
 
-zstyle ':vcs_info:git:*' formats ' %F{1}%s %F{15} %r %F{6} %b %u %c'
+zstyle ':vcs_info:git:*' formats '%B  %F{15} %r %F{6} %b %F{2}%u %c'
 
 RPROMPT='$vcs_info_msg_0_'
 
@@ -23,7 +23,7 @@ precmd() {
     }
 }
 
-export PS1=$'%F{4}%~\n%F{5}%m%F{4}@%F{12}%n %(?.%F{6}.%F{1})❯ %F{reset}'
+export PS1=$'%B%F{4}%~\n%F{5}%m%F{4}@%F{12}%n %(?.%F{6}.%F{1})❯ %F{reset}%b'
 
 ###########
 ##PLUGINS##
@@ -39,6 +39,9 @@ source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # syntax highlighting like fish
 [ ! -d $ZDOTDIR/plugins/zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZDOTDIR/plugins/zsh-syntax-highlighting
 source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
+# autojump
+source /usr/share/autojump/autojump.zsh
 
 ################
 ##KEY BINDINGS##

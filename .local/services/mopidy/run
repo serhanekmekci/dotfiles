@@ -1,0 +1,2 @@
+#!/bin/sh
+exec mopidy --config ~/.config/mopidy/mopidy.conf >/dev/null 2>&1
