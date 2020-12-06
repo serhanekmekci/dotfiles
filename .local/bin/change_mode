@@ -9,10 +9,12 @@ Xft.dpi: 96
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 /* DMENU */
-dmenu.font:Fira Code:style=Regular:size=12
+dmenu.font:Fira Code:style=Regular:size=12:antialias=true:autohint=true
 
 /* ST */
-st.font:Iosevka:style=Regular:size=14
+st.font:Iosevka:style=Regular:size=14:antialias=true:autohint=true
+
+tabbed.font:Fira Code:style=Regular:size=14:antialias=true
 
 /* ! Dracula Xresources palette */
 *.color0:     #000000
@@ -44,8 +46,8 @@ dwm.normbgcolor: #000000
 dwm.normbordercolor: #000000
 dwm.normfgcolor: #ffffff
 dwm.selfgcolor: #000000
-dwm.selbordercolor: #ffffff
-dwm.selbgcolor: #ffffff
+dwm.selbordercolor: #ababab
+dwm.selbgcolor: #ababab
 
 dmenu.background: #000000
 dmenu.foreground: #ffffff
@@ -61,6 +63,12 @@ dmenu.highlightselforeground: #005577
 dmenu.outbackground:#ffffff
 dmenu.outforeground:#000000
 
+tabbed.selbgcolor:#000000
+tabbed.selfgcolor:#ffffff
+
+tabbed.normbgcolor:#ababab
+tabbed.normfgcolor:#ffffff
+
 *.background: #000000
 
 st.alpha: 0.60
@@ -68,12 +76,12 @@ st.alpha: 0.60
 
 LIGHT_MODE="
 /* LIGHT MODE */
-dwm.normbgcolor: #ffffff
+dwm.normbgcolor: #ababab
 dwm.normbordercolor: #000000
 dwm.normfgcolor: #000000
-dwm.selfgcolor: #000000
-dwm.selbordercolor: #ababab
-dwm.selbgcolor: #ababab
+dwm.selfgcolor: #ffffff
+dwm.selbordercolor: #000000
+dwm.selbgcolor: #000000
 
 dmenu.background: #ffffff
 dmenu.foreground: #000000
@@ -88,6 +96,12 @@ dmenu.highlightselforeground:#005577
 
 dmenu.outbackground:#ababab
 dmenu.outforeground:#000000
+
+tabbed.selbgcolor:#ffffff
+tabbed.selfgcolor:#000000
+
+tabbed.normbgcolor:#ababab
+tabbed.normfgcolor:#ffffff
 
 *.background: #282a36
 st.alpha: 0.85
@@ -122,6 +136,7 @@ then
 		xrdb -merge $HOME/.config/X11/Xresources &&
 		dwmc reload &&
 		kill -s USR1 $(pidof st) &&
+		kill -s USR1 $(pidof tabbed) &&
 
 		if ls /tmp/nvimsocket-* 1> /dev/null 2>&1; then
 			cmdvim "AirlineTheme minimalist"
@@ -142,6 +157,7 @@ else
 		xrdb -merge $HOME/.config/X11/Xresources &&
 		dwmc reload &&
 		kill -s USR1 $(pidof st) &&
+		kill -s USR1 $(pidof tabbed) &&
 
 		if ls /tmp/nvimsocket-* 1> /dev/null 2>&1; then
 			cmdvim "AirlineTheme sol"
