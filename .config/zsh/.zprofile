@@ -3,7 +3,8 @@
 export LOCATION="Edirne"
 
 export SVDIR="$HOME/.local/run/runit/service"
-export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
+export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':' -)"
+
 export ZDOTDIR="$HOME/.config/zsh"
 
 export EDITOR="nvim"
