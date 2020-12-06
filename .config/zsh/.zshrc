@@ -1,5 +1,31 @@
-# Prompt
-eval "$(starship init zsh)"
+##########
+##Prompt##
+##########
+
+# Git integration
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+#RPROMPT=\$vcs_info_msg_0_
+# PROMPT=\$vcs_info_msg_0_'%# '
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr 'STAGED'
+zstyle ':vcs_info:*' unstagedstr 'UNSTAGED'
+
+zstyle ':vcs_info:git:*' formats ' %F{gray} %r %F{cyan} %b %u %c'
+patch_format="anan"
+nopatch_format="baban"
+setopt promptsubst
+
+# New line after every prompt
+precmd() {
+    precmd() {
+        echo
+    }
+}
+
+export PS1=$'%F{blue}%~$vcs_info_msg_0_\n%F{white}%m%F{white}@%F{white}%n %(?.%F{cyan}.%F{red})❯ %F{white}'
 
 ###########
 ##PLUGINS##
@@ -30,7 +56,7 @@ setopt EXTENDED_HISTORY
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc"
 
 # Basic auto/tab complete:
-autoload -U compinit
+autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit

@@ -46,7 +46,7 @@ dwm.normbordercolor: #000000
 dwm.normfgcolor: #ffffff
 dwm.selfgcolor: #000000
 dwm.selbordercolor: #ababab
-dwm.selbgcolor: #ababab
+dwm.selbgcolor: #ffffff
 
 dmenu.background: #000000
 dmenu.foreground: #ffffff
