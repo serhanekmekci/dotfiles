@@ -29,11 +29,16 @@ export PS1=$'%F{4}%~\n%F{5}%m%F{4}@%F{12}%n %(?.%F{6}.%F{1})❯ %F{reset}'
 ##PLUGINS##
 ###########
 
+# build plugins path if not exist
+[ ! -d $ZDOTDIR/plugins ] && mkdir $ZDOTDIR/plugins
+
 # auto suggestions
-source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ ! -d $ZDOTDIR/plugins/zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions $ZDOTDIR/plugins/zsh-autosuggestions
+source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # syntax highlighting like fish
-source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+[ ! -d $ZDOTDIR/plugins/zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZDOTDIR/plugins/zsh-syntax-highlighting
+source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 ################
 ##KEY BINDINGS##
