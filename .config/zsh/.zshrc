@@ -8,16 +8,13 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 
-#RPROMPT=\$vcs_info_msg_0_
-# PROMPT=\$vcs_info_msg_0_'%# '
-
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr 'STAGED'
-zstyle ':vcs_info:*' unstagedstr 'UNSTAGED'
+zstyle ':vcs_info:*' stagedstr 'S'
+zstyle ':vcs_info:*' unstagedstr 'U'
 
 zstyle ':vcs_info:git:*' formats ' %F{1}%s %F{15} %r %F{6} %b %u %c'
 
-setopt promptsubst
+RPROMPT='$vcs_info_msg_0_'
 
 # New line after every prompt
 precmd() {
@@ -26,14 +23,17 @@ precmd() {
     }
 }
 
-export PS1=$'%F{4}%~$vcs_info_msg_0_\n%F{5}%m%F{4}@%F{12}%n %(?.%F{6}.%F{1})❯ %F{reset}'
+export PS1=$'%F{4}%~\n%F{5}%m%F{4}@%F{12}%n %(?.%F{6}.%F{1})❯ %F{reset}'
 
 ###########
 ##PLUGINS##
 ###########
 
-# Source zsh-auto-suggestions
+# auto suggestions
 source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# syntax highlighting like fish
+source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 ################
 ##KEY BINDINGS##
