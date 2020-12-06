@@ -7,13 +7,16 @@ autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
+
 #RPROMPT=\$vcs_info_msg_0_
 # PROMPT=\$vcs_info_msg_0_'%# '
+
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr 'STAGED'
 zstyle ':vcs_info:*' unstagedstr 'UNSTAGED'
 
-zstyle ':vcs_info:git:*' formats ' %F{gray} %r %F{cyan} %b %u %c'
+zstyle ':vcs_info:git:*' formats ' %F{red}%s %F{gray} %r %F{cyan} %b %u %c'
+
 patch_format="anan"
 nopatch_format="baban"
 setopt promptsubst
