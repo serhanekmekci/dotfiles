@@ -37,8 +37,7 @@ tabbed.font:Fira Code:style=Regular:size=14:antialias=true
 
 *.foreground: #f8f8f2
 
-dwm.topbar: 1
-"
+dwm.topbar: 1 "
 
 DARK_MODE="
 /* DARK MODE */
@@ -80,7 +79,7 @@ dwm.normbgcolor: #ababab
 dwm.normbordercolor: #000000
 dwm.normfgcolor: #000000
 dwm.selfgcolor: #ffffff
-dwm.selbordercolor: #000000
+dwm.selbordercolor: #ffffff
 dwm.selbgcolor: #000000
 
 dmenu.background: #ffffff
