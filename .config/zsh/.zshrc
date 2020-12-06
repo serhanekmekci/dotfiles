@@ -15,10 +15,8 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr 'STAGED'
 zstyle ':vcs_info:*' unstagedstr 'UNSTAGED'
 
-zstyle ':vcs_info:git:*' formats ' %F{red}%s %F{gray} %r %F{cyan} %b %u %c'
+zstyle ':vcs_info:git:*' formats ' %F{1}%s %F{15} %r %F{6} %b %u %c'
 
-patch_format="anan"
-nopatch_format="baban"
 setopt promptsubst
 
 # New line after every prompt
@@ -28,7 +26,7 @@ precmd() {
     }
 }
 
-export PS1=$'%F{blue}%~$vcs_info_msg_0_\n%F{white}%m%F{white}@%F{white}%n %(?.%F{cyan}.%F{red})❯ %F{white}'
+export PS1=$'%F{4}%~$vcs_info_msg_0_\n%F{5}%m%F{4}@%F{12}%n %(?.%F{6}.%F{1})❯ %F{reset}'
 
 ###########
 ##PLUGINS##
