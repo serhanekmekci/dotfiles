@@ -24,5 +24,5 @@ super + shift + n
 	$TERMINAL -e newsboat
 super + shift + x
 	$TERMINAL -n translate -g 120x34 -e translate
-super + shift + return
-	$TERMINAL /bin/zsh
+super + shift + o
+	$TERMINAL -e ncmpcpp

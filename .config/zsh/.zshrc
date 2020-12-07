@@ -23,7 +23,7 @@ precmd() {
     }
 }
 
-export PS1=$'%B%F{4}%~\n%F{5}%m%F{4}@%F{12}%n %(?.%F{6}.%F{1})❯ %F{reset}%b'
+export PS1=$'%B%F{4}%~\n%F{5}%m%F{6}@%F{12}%n %(?.%F{6}.%F{1})❯ %F{reset}%b'
 
 ###########
 ##PLUGINS##

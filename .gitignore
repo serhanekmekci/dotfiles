@@ -1,3 +1,5 @@
 .local/services/*/supervise/
+.local/services/*/log/*
+!.local/services/*/log/run
 .local/bin/nvr
 .config/X11/Xresources
