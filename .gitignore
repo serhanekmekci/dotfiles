@@ -3,3 +3,4 @@
 !.local/services/*/log/run
 .local/bin/nvr
 .config/X11/Xresources
+.config/ncmpcpp/error.log
