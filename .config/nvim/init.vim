@@ -17,6 +17,11 @@ Plug 'junegunn/goyo.vim'
 Plug 'bling/vim-airline'
 Plug 'vifm/vifm.vim'
 Plug 'maralla/completor.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'luochen1990/rainbow'
+Plug 'vim-syntastic/syntastic'
+Plug 'preservim/tagbar'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 set bg=dark
@@ -107,3 +112,15 @@ let g:completor_clang_binary = '/usr/bin/clang'
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+
+let g:rainbow_active = 1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:airline#extensions#tagbar#enabled = 1
