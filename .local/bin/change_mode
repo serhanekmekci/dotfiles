@@ -12,7 +12,7 @@ Xft.lcdfilter: lcddefault
 dmenu.font:Fira Code:style=Regular:size=12:antialias=true:autohint=true
 
 /* ST */
-st.font:Iosevka:style=Regular:size=14:antialias=true:autohint=true
+st.font:Iosevka:style=Regular:size=13:antialias=true:autohint=true
 
 tabbed.font:Fira Code:style=Regular:size=14:antialias=true
 
@@ -81,8 +81,8 @@ dwm.normbgcolor: #ffffff
 dwm.normfgcolor: #000000
 dwm.normbordercolor: #000000
 
-dwm.selbgcolor: #ababab
-dwm.selfgcolor: #000000
+dwm.selbgcolor: #000000
+dwm.selfgcolor: #ffffff
 dwm.selbordercolor: #ffffff
 
 dmenu.background: #ffffff
@@ -121,6 +121,7 @@ then
 		xrdb -merge $HOME/.config/X11/Xresources &&
 		dwmc reload &&
 		kill -s USR1 $(pidof st) &&
+		kill -s USR1 $(pidof tabbed) &&
 
 		if ls /tmp/nvimsocket-* 1> /dev/null 2>&1; then
 			cmdvim "AirlineTheme sol"
@@ -130,6 +131,7 @@ then
 
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-2.0/gtkrc-2.0
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-3.0/settings.ini
+		genzathurarc > ~/.config/zathura/zathurarc
 
 	elif [ "$PROMPT" = "Dark" ]
 	then
@@ -148,6 +150,7 @@ then
 
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-2.0/gtkrc-2.0
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-3.0/settings.ini
+		genzathurarc > ~/.config/zathura/zathurarc
 
 	fi
 
@@ -169,6 +172,7 @@ else
 
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-2.0/gtkrc-2.0
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-3.0/settings.ini
+		genzathurarc > ~/.config/zathura/zathurarc
 
 	elif [ "$1" = "Dark" -o "$1" = "dark" ] ; then
 		CHOOSED_CONFIG+="$ALWAYS $DARK_MODE"
@@ -176,6 +180,7 @@ else
 		xrdb -merge $HOME/.config/X11/Xresources &&
 		dwmc reload &&
 		kill -s USR1 $(pidof st) &&
+		kill -s USR1 $(pidof tabbed) &&
 
 		if ls /tmp/nvimsocket-* 1> /dev/null 2>&1; then
 			cmdvim "AirlineTheme minimalist"
@@ -185,6 +190,7 @@ else
 
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-2.0/gtkrc-2.0
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-3.0/settings.ini
+		genzathurarc > ~/.config/zathura/zathurarc
 
 
 	elif [ "$1" = "toggle" -o "$1" = "Toggle" ] ; then

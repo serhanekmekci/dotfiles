@@ -3,7 +3,7 @@
 . $ZDOTDIR/.zprofile
 . $XDG_CONFIG_HOME/aliasrc
 
-REPO_NAMES="dotfiles surf dmenu dwm st The-C-Programming-Language-Second-Edition-Turkish-Translation dwmblocks"
+REPO_NAMES="dotfiles surf dmenu dwm st The-C-Programming-Language-Second-Edition-Turkish-Translation dwmblocks tabbed"
 GIT_HOST="git@git.ekmekci.me"
 
 for x in $REPO_NAMES; do

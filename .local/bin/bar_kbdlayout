@@ -6,13 +6,14 @@ case $BUTTON in
 	1) switch_xkbdlayout;;
 	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0";;
 esac
+icon=""
 
 if [ $LAYOUT == "tr" ]
 then
-  echo "Turkish"
+  echo "$icon ""Turkish"
 elif [ $LAYOUT == "de" ]
 then
-  echo "Deutsch"
+  echo "$icon ""Deutsch"
 else
-  echo "Turkish"
+  echo "$icon ""Turkish"
 fi

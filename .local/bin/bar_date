@@ -4,4 +4,6 @@ case $BUTTON in
         6) setsid -f "$TERMINAL" -e "$EDITOR" "$0";;
 esac
 
-date '+%d %b %A %Y'
+date=$(date '+%d %b %A %Y')
+
+echo " ""$date"

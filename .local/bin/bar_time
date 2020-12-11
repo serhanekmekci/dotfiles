@@ -4,10 +4,16 @@ case $BUTTON in
         6) setsid -f "$TERMINAL" -e "$EDITOR" "$0";;
 esac
 
-time="$(date '+%H:%M')"
+while true
+do
+	time="$(date '+%H:%M')"
 
-if [ time == "00:00" ]
-then
-  pkill -RTMIN+2 blocks
-fi
-echo $time" "
+	if [ time = "00:00" ]
+	then
+	  pkill -RTMIN+2 blocks
+	fi
+
+	echo "" "$time "
+    pkill -RTMIN+1 blocks
+	sleep 1
+done
