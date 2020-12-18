@@ -12,9 +12,11 @@ Xft.lcdfilter: lcddefault
 dmenu.font:Fira Code:style=Regular:size=12:antialias=true:autohint=true
 
 /* ST */
-st.font:Iosevka:style=Regular:size=13:antialias=true:autohint=true
+st.font:Fira Code:style=Regular:size=12:antialias=true:autohint=true
+st.cwscale: 0.90
+st.chscale: 1.05
 
-tabbed.font:Fira Code:style=Regular:size=14:antialias=true
+tabbed.font:Fira Code:style=Regular:size=12:antialias=true
 
 /* ! Dracula Xresources palette */
 *.color0:     #000000
@@ -39,6 +41,9 @@ tabbed.font:Fira Code:style=Regular:size=14:antialias=true
 
 dwm.topbar: 1
 dwm.borderpx: 3
+dwm.barborder: 3
+
+dmenu.borderpx: 3
 "
 
 DARK_MODE="
@@ -58,7 +63,7 @@ dmenu.selforeground:#000000
 dmenu.highlightbackground: #000000
 dmenu.higlightselbackground: #ffffff
 
-dmenu.highlightforeground: #8BE9FD
+dmenu.highlightforeground: #FF92D0
 dmenu.highlightselforeground: #005577
 
 dmenu.outbackground:#ffffff
@@ -87,16 +92,16 @@ dwm.selbordercolor: #ffffff
 
 dmenu.background: #ffffff
 dmenu.foreground: #000000
-dmenu.selbackground: #ababab
-dmenu.selforeground:#000000
+dmenu.selbackground: #000000
+dmenu.selforeground:#ffffff
 
 dmenu.highlightbackground: #ffffff
-dmenu.higlightselbackground: #ababab
+dmenu.higlightselbackground: #000000
 
 dmenu.highlightforeground: #005577
-dmenu.highlightselforeground:#005577
+dmenu.highlightselforeground:#FF92D0
 
-dmenu.outbackground:#ababab
+dmenu.outbackground:#ffffff
 dmenu.outforeground:#000000
 
 tabbed.selbgcolor:#ffffff

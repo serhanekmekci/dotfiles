@@ -3,6 +3,7 @@
 
 . ~/.config/X11/xprofile
 
+sv restart dynamic_wallpaper
 while :; do
 	ssh-agent dwm
 done
