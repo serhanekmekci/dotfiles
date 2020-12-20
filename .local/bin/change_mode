@@ -137,6 +137,7 @@ then
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-2.0/gtkrc-2.0
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
+		sed -i "s/own_window_colour =.*/own_window_colour = '#282A36',/g" $XDG_CONFIG_HOME/conky/conky.conf
 
 	elif [ "$PROMPT" = "Dark" ]
 	then
@@ -156,6 +157,7 @@ then
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-2.0/gtkrc-2.0
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
+		sed -i "s/own_window_colour =.*/own_window_colour = '#000000',/g" $XDG_CONFIG_HOME/conky/conky.conf
 
 	fi
 
@@ -178,6 +180,7 @@ else
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-2.0/gtkrc-2.0
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
+		sed -i "s/own_window_colour =.*/own_window_colour = '#282A36',/g" $XDG_CONFIG_HOME/conky/conky.conf
 
 	elif [ "$1" = "Dark" -o "$1" = "dark" ] ; then
 		CHOOSED_CONFIG+="$ALWAYS $DARK_MODE"
@@ -196,6 +199,8 @@ else
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-2.0/gtkrc-2.0
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
+		sed -i "s/own_window_colour =.*/own_window_colour = '#000000',/g" $XDG_CONFIG_HOME/conky/conky.conf
+
 
 
 	elif [ "$1" = "toggle" -o "$1" = "Toggle" ] ; then

@@ -3,6 +3,7 @@
 xset r rate 300 50 &
 dwmblocks &
 sxhkd &
+conky &
 
 # This line autostarts an instance of Pulseaudio that does not exit on idle.
 # This is "necessary" on Artix due to a current bug between PA and
