@@ -1,8 +1,12 @@
 #!/bin/sh
+exec 2>&1
 
+if pidof xinit ;
+then
 export DISPLAY=:0
 export XAUTHORITY=/run/user/1000/Xauthority
 export SHELL=/bin/zsh
 export PATH="$PATH:$(du "/usr/local/bin" | cut -f2 | paste -sd ':'):$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 
-exec wallpaper dynamic Mojave
+exec wallpaper dynamic lakeside
+fi

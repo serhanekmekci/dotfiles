@@ -14,5 +14,5 @@ then
 
    echo " $SSID %$SIGNAL_PERCENTAGE"
 else
-   echo " No Connection"
+   echo " No Wifi Connection"
 fi

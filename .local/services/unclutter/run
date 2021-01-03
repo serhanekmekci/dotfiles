@@ -1,6 +1,9 @@
 #!/bin/sh -l
 
+if pidof xinit ;
+then
 export DISPLAY=:0
 export XAUTHORITY=/run/user/1000/Xauthority
 
 exec unclutter
+fi

@@ -16,22 +16,22 @@ DATE=$(date +%H)
 
 while :
 do
-[ $DATE -ge 0 ] && [ $DATE -lt 3 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-1.jpeg" && change_mode dark && break
-[ $DATE -ge 3 ] && [ $DATE -lt 5 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-2.jpeg" && change_mode dark && break
-[ $DATE -ge 5 ] && [ $DATE -lt 6 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-3.jpeg" && change_mode dark && break
-[ $DATE -ge 6 ] && [ $DATE -lt 7 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-4.jpeg" && change_mode light && break
-[ $DATE -ge 7 ] && [ $DATE -lt 8 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-5.jpeg" && change_mode light && break
-[ $DATE -ge 8 ] && [ $DATE -lt 9 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-6.jpeg" && change_mode light && break
-[ $DATE -ge 9 ] && [ $DATE -lt 10 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-7.jpeg" && change_mode light && break
-[ $DATE -ge 10 ] && [ $DATE -lt 11 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-8.jpeg" && change_mode light && break
-[ $DATE -ge 11 ] && [ $DATE -lt 13 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-9.jpeg" && change_mode light && break
-[ $DATE -ge 13 ] && [ $DATE -lt 14 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-10.jpeg" && change_mode light && break
-[ $DATE -ge 14 ] && [ $DATE -lt 15 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-11.jpeg" && change_mode light && break
-[ $DATE -ge 15 ] && [ $DATE -lt 16 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-12.jpeg" && change_mode light && break
-[ $DATE -ge 16 ] && [ $DATE -lt 17 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-13.jpeg" && change_mode light && break
-[ $DATE -ge 17 ] && [ $DATE -lt 18 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-14.jpeg" && change_mode light && break
-[ $DATE -ge 18 ] && [ $DATE -lt 20 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-15.jpeg" && change_mode dark && break
-[ $DATE -ge 20 ] && [ $DATE -lt 24 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-16.jpeg" && change_mode dark && break
+[ $DATE -ge 0 ] && [ $DATE -lt 3 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-2.jpeg" && change_mode dark && break
+[ $DATE -ge 3 ] && [ $DATE -lt 5 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-3.jpeg" && change_mode dark && break
+[ $DATE -ge 5 ] && [ $DATE -lt 6 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-4.jpeg" && change_mode dark && break
+[ $DATE -ge 6 ] && [ $DATE -lt 7 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-5.jpeg" && change_mode light && break
+[ $DATE -ge 7 ] && [ $DATE -lt 8 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-6.jpeg" && change_mode light && break
+[ $DATE -ge 8 ] && [ $DATE -lt 9 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-7.jpeg" && change_mode light && break
+[ $DATE -ge 9 ] && [ $DATE -lt 10 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-8.jpeg" && change_mode light && break
+[ $DATE -ge 10 ] && [ $DATE -lt 11 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-9.jpeg" && change_mode light && break
+[ $DATE -ge 11 ] && [ $DATE -lt 13 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-10.jpeg" && change_mode light && break
+[ $DATE -ge 13 ] && [ $DATE -lt 14 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-11.jpeg" && change_mode light && break
+[ $DATE -ge 14 ] && [ $DATE -lt 15 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-12.jpeg" && change_mode light && break
+[ $DATE -ge 15 ] && [ $DATE -lt 16 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-13.jpeg" && change_mode light && break
+[ $DATE -ge 16 ] && [ $DATE -lt 17 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-14.jpeg" && change_mode light && break
+[ $DATE -ge 17 ] && [ $DATE -lt 18 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-15.jpeg" && change_mode light && break
+[ $DATE -ge 18 ] && [ $DATE -lt 20 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-16.jpeg" && change_mode dark && break
+[ $DATE -ge 20 ] && [ $DATE -lt 24 ] && xwallpaper --maximize $WALLPAPER_FOLDER_PATH/$SELECTED_HEIF_FILE_NAME/"$SELECTED_HEIF_FILE_NAME-1.jpeg" && change_mode dark && break
 done
 
 MINUTE=$(date +%M)

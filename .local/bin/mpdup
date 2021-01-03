@@ -3,6 +3,9 @@
 # This loop will update the mpd statusbar module whenever a command changes the
 # music player's status. mpd must be running on X's start for this to work.
 
+if pgrep mopidy ;
+then
 while : ; do
-	pgrep mopidy >/dev/null && mpc idle >/dev/null && pkill -RTMIN+14 blocks
+	mpc idle >/dev/null && pkill -RTMIN+14 blocks
 done
+fi

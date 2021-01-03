@@ -26,3 +26,7 @@ super + shift + x
 	$TERMINAL -n translate -g 120x34 -e translate
 super + shift + o
 	$TERMINAL -e ncmpcpp
+Print
+	scrot
+super + Print
+	scrot -s

@@ -21,8 +21,8 @@ export BROWSER="surf-open"
 #########################
 
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
-export SAVEHIST=10000               # Number of history entries to save to disk
-export HISTSIZE=10000               # How many lines of history to keep in memory
+export SAVEHIST=1000000              # Number of history entries to save to disk
+export HISTSIZE=1000000              # How many lines of history to keep in memory
 
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"

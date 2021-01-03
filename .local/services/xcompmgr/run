@@ -1,6 +1,9 @@
 #!/bin/sh
 
+if pidof xinit ;
+then
 export DISPLAY=:0
 export XAUTHORITY=/run/user/1000/Xauthority
 
 exec picom -r 15 -f
+fi
