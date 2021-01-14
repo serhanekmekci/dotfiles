@@ -40,8 +40,8 @@ tabbed.font:Fira Code:style=Regular:size=12:antialias=true
 *.foreground: #f8f8f2
 
 dwm.topbar: 1
-dwm.borderpx: 3
-dwm.barborder: 3
+dwm.borderpx: 5
+dwm.barborder: 5
 
 dmenu.borderpx: 3
 "
@@ -138,6 +138,7 @@ then
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
 		sed -i "s/own_window_colour =.*/own_window_colour = '#282A36',/g" $XDG_CONFIG_HOME/conky/conky.conf
+		openrgb -c f8f8f2
 
 	elif [ "$PROMPT" = "Dark" ]
 	then
@@ -158,6 +159,7 @@ then
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
 		sed -i "s/own_window_colour =.*/own_window_colour = '#000000',/g" $XDG_CONFIG_HOME/conky/conky.conf
+		openrgb -c cc0099
 
 	fi
 
@@ -181,6 +183,7 @@ else
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
 		sed -i "s/own_window_colour =.*/own_window_colour = '#282A36',/g" $XDG_CONFIG_HOME/conky/conky.conf
+		openrgb -c f8f8f2
 
 	elif [ "$1" = "Dark" -o "$1" = "dark" ] ; then
 		CHOOSED_CONFIG+="$ALWAYS $DARK_MODE"
@@ -200,8 +203,7 @@ else
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
 		sed -i "s/own_window_colour =.*/own_window_colour = '#000000',/g" $XDG_CONFIG_HOME/conky/conky.conf
-
-
+		openrgb -c cc0039
 
 	elif [ "$1" = "toggle" -o "$1" = "Toggle" ] ; then
 		if grep -q "DARK MODE" $HOME/.config/X11/Xresources

@@ -7,8 +7,10 @@ then
 change_mode dark &
 sv stop dynamic_wallpaper &&
 xwallpaper --maximize $HOME/.local/share/wallpapers/gray.jpg
+killall conky
 else
 sv restart dynamic_wallpaper
+setsid -f conky
 fi
 
 dwmc togglebar &

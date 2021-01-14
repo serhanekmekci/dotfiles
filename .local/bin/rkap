@@ -3,6 +3,9 @@
 . $ZDOTDIR/.zprofile
 . $XDG_CONFIG_HOME/aliasrc
 
-pass git push -u --all && ssh git@git.ekmekci.me 'git --git-dir=/var/www/git/password-store.git push --mirror git@github.com:serhanekmekci/password-store.git'
+pass git push -u --all
 
-git --git-dir="$GNUPGHOME/.git" add . && git --git-dir="$GNUPGHOME/.git" commit -m "$(date)" && git --git-dir="$GNUPGHOME/.git" push -u origin master && ssh git@git.ekmekci.me 'git --git-dir=/var/www/git/gnupg-data.git push --mirror git@github.com:serhanekmekci/gnupg-data.git'
+git --git-dir="$GNUPGHOME/.git" add . && git --git-dir="$GNUPGHOME/.git" commit -m "$(date)" && git --git-dir="$GNUPGHOME/.git" push -u origin master
+
+ssh git@git.ekmekci.me 'git --git-dir=/var/www/git/gnupg-data.git push --mirror git@github.com:serhanekmekci/gnupg-data.git'
+ssh git@git.ekmekci.me 'git --git-dir=/var/www/git/password-store.git push --mirror git@github.com:serhanekmekci/password-store.git'

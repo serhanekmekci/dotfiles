@@ -1,0 +1,12 @@
+#/bin/sh
+
+layout=$(printf "Tiled\nFloating\nSpiral (Fibonacci)\nDwindle (Fibonacci)\nCentered Master\nDeck" | dmenu -i -c -l 6 -p "Choose layout:")
+
+case $layout in
+    "Tiled")				dwmc setlayoutex 0 ;;
+    "Floating")				dwmc setlayoutex 1 ;;
+    "Spiral (Fibonacci)")	dwmc setlayoutex 2 ;;
+    "Dwindle (Fibonacci)")	dwmc setlayoutex 3 ;;
+    "Centered Master")		dwmc setlayoutex 4 ;;
+    "Deck")					dwmc setlayoutex 5 ;;
+esac

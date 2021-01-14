@@ -5,5 +5,5 @@ then
 export DISPLAY=:0
 export XAUTHORITY=/run/user/1000/Xauthority
 
-exec picom -r 15 -f
+exec picom --config ~/.config/picom/picom.conf -r 15 -f
 fi

@@ -39,6 +39,7 @@ export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/inputrc"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export WINEPREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/wineprefixes/default"
+export WINEARCH=win64
 export KODI_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/kodi"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
@@ -51,6 +52,8 @@ export UNISON="${XDG_DATA_HOME:-$HOME/.local/share}/unison"
 export SSH_CONFIG="${XDG_CONFIG_HOME}/ssh/config"
 export SSH_ID="${XDG_CONFIG_HOME}/ssh/id_rsa"
 export SSH_KNOWN_HOSTS="${XDG_CONFIG_HOME}/ssh/known_hosts"
+
+export TWITCH_OAUTH="oauth:w9rmsy9a5e220uocsmwmgyx5ba657i"
 
 ###########
 ##START X##
