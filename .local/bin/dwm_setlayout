@@ -1,8 +1,0 @@
-#/bin/sh
-
-layout=$(printf "Tiled\nFloating" | dmenu -c -l 2 -p "Choose layout:")
-
-case $layout in
-    Tiled)     dwmc setlayoutex 0 ;;
-    Floating)    dwmc setlayoutex 1 ;;
-esac
