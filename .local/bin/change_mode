@@ -51,9 +51,29 @@ DARK_MODE="
 dwm.normbgcolor: #000000
 dwm.normbordercolor: #000000
 dwm.normfgcolor: #ffffff
+
 dwm.selfgcolor: #000000
 dwm.selbordercolor: #ababab
 dwm.selbgcolor: #ffffff
+
+dwm.statfg: #ffffff
+dwm.statbg: #000000
+
+dwm.tagnormbg: #000000
+dwm.tagnormfg: #ffffff
+
+dwm.tagselbg: #ffffff
+dwm.tagselfg: #000000
+
+dwm.infonormbg: #000000
+dwm.infonormfg: #ffffff
+
+dwm.infoselbg: #000000
+dwm.infoselfg: #ffffff
+
+dwm.taggridbg: #ffffff
+dwm.taggridfg: #000000
+dwm.taggridborder: #ffffff
 
 dmenu.background: #000000
 dmenu.foreground: #ffffff
@@ -89,6 +109,25 @@ dwm.normbordercolor: #000000
 dwm.selbgcolor: #000000
 dwm.selfgcolor: #ffffff
 dwm.selbordercolor: #ffffff
+
+dwm.statfg: #000000
+dwm.statbg: #ffffff
+
+dwm.tagnormbg: #000000
+dwm.tagnormfg: #ffffff
+
+dwm.tagselbg: #ffffff
+dwm.tagselfg: #000000
+
+dwm.infonormbg: #ffffff
+dwm.infonormfg: #000000
+
+dwm.infoselbg: #ffffff
+dwm.infoselfg: #000000
+
+dwm.taggridbg: #ffffff
+dwm.taggridfg: #000000
+dwm.taggridborder: #ffffff
 
 dmenu.background: #ffffff
 dmenu.foreground: #000000
