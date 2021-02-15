@@ -1,0 +1,74 @@
+#!/bin/sh
+
+# check if necessary programs are installed
+command -v jq >/dev/null || { echo 'Please install jq!'; exit 1; }
+
+# assign menu prorgram
+menu='dmenu -i -l 15'
+#menu='rofi -dmenu -i'
+
+# if notify-send is not installed, use echo as notifier for errors
+notifier='notify-send'
+
+# searx instance you will be getting the results from
+instance=https://searx.lukesmith.xyz/
+#:r !grep '\* https://' README.md | sed 's/^\s*\*\s*/\#instance=/'
+#:<grep '\* https://' README.md | sed 's/^\s*\*\s*/\#instance=/'
+
+# checks if instance is empty
+if [ -z "$instance" ]; then
+	$notifier 'Empty instance'
+	exit 1
+fi
+
+# browser
+browser=${BROWSER:-surf}
+
+# search term, exit with error if query is empty
+query=$($menu -p 'Search' <&-) || {
+	$notifier 'Empty query'
+	exit 1
+}
+
+# sanitise query
+query=$(printf "$query" | \
+	sed \
+	-e 's|+|%2B|g'\
+	-e 's|#|%23|g'\
+	-e 's|&|%26|g'\
+	-e 's| |+|g'\
+	)
+
+# where any temporary files will be stored
+cachedir=${XDG_CACHE_HOME:-/tmp/menusearx}
+
+# if cachedir does not exist, create it
+[ -d "$cachedir" ] || {
+	echo "$cachedir does not exist, creating..."
+	mkdir -p "$cachedir"
+}
+
+# gets results json
+curl -o "$cachedir/results.json" -s "$instance/search?q=$query&format=json"
+
+if grep -qF 'Rate limit exceeded' "$cachedir/results.json"; then
+	$notifier 'Instance rate limit exceeded'
+	exit 1
+elif grep -qF 'Blocked' "$cachedir/results.json"; then
+        $notifier 'Instance blocked program'
+	exit 1
+fi
+
+# gets individual titles and urls
+jq -r '.results[] | [.title, .url] | join("@")' "$cachedir/results.json" |
+column -t -s '@' >"$cachedir/links.txt"
+
+# prompts user to select result, open in browser if non-empty
+if url=$($menu -p 'Select' <"$cachedir/links.txt" | grep -o 'https://.*'); then
+	$browser "$url"
+else
+	$notifier 'Invalid URL'
+fi
+
+rm "${cachedir:?}"/*
+

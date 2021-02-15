@@ -12,7 +12,7 @@ Xft.lcdfilter: lcddefault
 dmenu.font:Fira Code:style=Regular:size=12:antialias=true:autohint=true
 
 /* ST */
-st.font:Fira Code:style=Regular:size=12:antialias=true:autohint=true
+st.font:Fira Code:style=Regular:size=11:antialias=true:autohint=true
 st.cwscale: 0.90
 st.chscale: 1.05
 
@@ -124,6 +124,7 @@ dwm.infonormfg: #000000
 
 dwm.infoselbg: #ffffff
 dwm.infoselfg: #000000
+dwm.infoselborder: #000000
 
 dwm.taggridbg: #ffffff
 dwm.taggridfg: #000000
@@ -178,6 +179,7 @@ then
 		genzathurarc > ~/.config/zathura/zathurarc
 		sed -i "s/own_window_colour =.*/own_window_colour = '#282A36',/g" $XDG_CONFIG_HOME/conky/conky.conf
 		openrgb -c f8f8f2
+		rivalcfg -c FFFFFF --strip-bottom-color FFFFFF --strip-middle-color FFFFFF --strip-top-color FFFFFF
 
 	elif [ "$PROMPT" = "Dark" ]
 	then
@@ -199,6 +201,7 @@ then
 		genzathurarc > ~/.config/zathura/zathurarc
 		sed -i "s/own_window_colour =.*/own_window_colour = '#000000',/g" $XDG_CONFIG_HOME/conky/conky.conf
 		openrgb -c cc0099
+		rivalcfg -c cc0099 --strip-bottom-color cc0099 --strip-middle-color cc0099 --strip-top-color cc0099
 
 	fi
 
@@ -223,6 +226,7 @@ else
 		genzathurarc > ~/.config/zathura/zathurarc
 		sed -i "s/own_window_colour =.*/own_window_colour = '#282A36',/g" $XDG_CONFIG_HOME/conky/conky.conf
 		openrgb -c f8f8f2
+		rivalcfg -c f8f8f2 --strip-bottom-color f8f8f2 --strip-middle-color f8f8f2 --strip-top-color f8f8f2
 
 	elif [ "$1" = "Dark" -o "$1" = "dark" ] ; then
 		CHOOSED_CONFIG+="$ALWAYS $DARK_MODE"

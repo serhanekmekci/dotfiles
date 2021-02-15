@@ -6,5 +6,5 @@
 sv restart dynamic_wallpaper
 
 while :; do
-	ssh-agent dwm
+	ssh-agent dwm >> dwmout
 done

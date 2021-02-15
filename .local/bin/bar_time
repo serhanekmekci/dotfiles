@@ -13,7 +13,7 @@ do
 	  pkill -RTMIN+2 blocks
 	fi
 
-	echo "" "$time "
+	echo -e "" "$time "
     pkill -RTMIN+1 blocks
 	sleep 1
 done

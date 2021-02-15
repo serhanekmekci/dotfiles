@@ -1,4 +1,4 @@
-ctrl + k + b
+ctrl + k
 	switch_xkbdlayout
 XF86AudioMute
 	pamixer -t; pkill -RTMIN+4 blocks
