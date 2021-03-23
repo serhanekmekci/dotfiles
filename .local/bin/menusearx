@@ -4,14 +4,13 @@
 command -v jq >/dev/null || { echo 'Please install jq!'; exit 1; }
 
 # assign menu prorgram
-menu='dmenu -i -l 15'
-#menu='rofi -dmenu -i'
+menu='dmenu -b -i -l 15'
 
 # if notify-send is not installed, use echo as notifier for errors
 notifier='notify-send'
 
 # searx instance you will be getting the results from
-instance=https://searx.lukesmith.xyz/
+instance=https://searx.ekmekci.me/
 #:r !grep '\* https://' README.md | sed 's/^\s*\*\s*/\#instance=/'
 #:<grep '\* https://' README.md | sed 's/^\s*\*\s*/\#instance=/'
 
@@ -70,5 +69,6 @@ else
 	$notifier 'Invalid URL'
 fi
 
-rm "${cachedir:?}"/*
+rm "${cachedir:?}"/results.json
+rm "${cachedir:?}"/links.txt
 

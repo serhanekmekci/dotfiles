@@ -1,0 +1,19 @@
+#!/bin/sh
+
+case $BUTTON in
+		1)
+			PROMPT="$(echo -e "Shutdown\nReboot" | dmenu -p "Your choice:" -i -g 2 -l 2 -c)"
+
+			if [ "$PROMPT" = "Reboot" ]
+			then
+			PROMPT="$(echo -e "Artix Linux\nWindows" | dmenu -p "Reboot to:" -i -g 2 -l 2 -c)"
+
+			[ "$PROMPT" = "Windows" ] && sudo grub-reboot "$(sudo grep -i windows /boot/grub/grub.cfg|cut -d"'" -f2)" && sudo reboot
+			[ "$PROMPT" = "Artix Linux" ] && sudo grub-reboot "$(sudo grep -i Artix /boot/grub/grub.cfg|cut -d"'" -f2)" && sudo reboot
+			elif [ "$PROMPT" = "Shutdown" ]
+			then
+				sudo shutdown -h now
+			fi
+			;;
+        6) setsid -f "$TERMINAL" -e "$EDITOR" "$0";;
+esac

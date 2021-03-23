@@ -1,0 +1,5 @@
+[user]
+	email = serhan@ekmekci.me
+	name = Serhan Ekmekçi
+[core]
+	sshCommand = ssh -F $SSH_CONFIG -i $SSH_ID -o UserKnownHostsFile=$SSH_KNOWN_HOSTS

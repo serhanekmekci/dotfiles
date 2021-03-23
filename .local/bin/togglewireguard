@@ -1,0 +1,5 @@
+#!/bin/sh
+
+DEV_NAME="wg0_client0"
+
+[ -d "/proc/sys/net/ipv4/conf/$DEV_NAME/" ] && sudo sv stop wg-quick_wg0_client0 && pkill -RTMIN+13 blocks || sudo sv start wg-quick_wg0_client0 && pkill -RTMIN+13 blocks
