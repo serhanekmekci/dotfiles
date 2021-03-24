@@ -4,6 +4,7 @@ dwmblocks &
 xset r rate 300 50 &
 sxhkd &
 conky &
+conky -q -c ~/.config/conky/conky2.conf &
 
 # This line autostarts an instance of Pulseaudio that does not exit on idle.
 # This is "necessary" on Artix due to a current bug between PA and

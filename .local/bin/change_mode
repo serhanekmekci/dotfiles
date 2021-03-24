@@ -178,6 +178,7 @@ then
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
 		sed -i "s/own_window_colour =.*/own_window_colour = '#282A36',/g" $XDG_CONFIG_HOME/conky/conky.conf
+		sed -i "s/own_window_colour =.*/own_window_colour = '#282A36',/g" $XDG_CONFIG_HOME/conky/conky2.conf
 		openrgb -c f8f8f2
 		rivalcfg -c FFFFFF --strip-bottom-color FFFFFF --strip-middle-color FFFFFF --strip-top-color FFFFFF
 
@@ -200,6 +201,7 @@ then
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
 		sed -i "s/own_window_colour =.*/own_window_colour = '#000000',/g" $XDG_CONFIG_HOME/conky/conky.conf
+		sed -i "s/own_window_colour =.*/own_window_colour = '#000000',/g" $XDG_CONFIG_HOME/conky/conky2.conf
 		openrgb -c cc0099
 		rivalcfg -c cc0099 --strip-bottom-color cc0099 --strip-middle-color cc0099 --strip-top-color cc0099
 
@@ -225,6 +227,7 @@ else
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
 		sed -i "s/own_window_colour =.*/own_window_colour = '#282A36',/g" $XDG_CONFIG_HOME/conky/conky.conf
+		sed -i "s/own_window_colour =.*/own_window_colour = '#282A36',/g" $XDG_CONFIG_HOME/conky/conky2.conf
 		openrgb -c f8f8f2
 		rivalcfg -c f8f8f2 --strip-bottom-color f8f8f2 --strip-middle-color f8f8f2 --strip-top-color f8f8f2
 
@@ -246,6 +249,7 @@ else
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
 		sed -i "s/own_window_colour =.*/own_window_colour = '#000000',/g" $XDG_CONFIG_HOME/conky/conky.conf
+		sed -i "s/own_window_colour =.*/own_window_colour = '#000000',/g" $XDG_CONFIG_HOME/conky/conky2.conf
 		openrgb -c cc0039
 		rivalcfg -c cc0099 --strip-bottom-color cc0099 --strip-middle-color cc0099 --strip-top-color cc0099
 
