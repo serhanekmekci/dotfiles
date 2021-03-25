@@ -79,8 +79,8 @@ dwm.tagselfg: #000000
 dwm.infonormbg: #000000
 dwm.infonormfg: #ffffff
 
-dwm.infoselbg: #000000
-dwm.infoselfg: #ffffff
+dwm.infoselbg: #ffffff
+dwm.infoselfg: #000000
 
 dwm.taggridbg: #ffffff
 dwm.taggridfg: #000000
@@ -124,8 +124,8 @@ dwm.selbordercolor: #ffffff
 dwm.statfg: #000000
 dwm.statbg: #ffffff
 
-dwm.tagnormbg: #000000
-dwm.tagnormfg: #ffffff
+dwm.tagnormbg: #ffffff
+dwm.tagnormfg: #000000
 
 dwm.tagselbg: #ffffff
 dwm.tagselfg: #000000
@@ -133,13 +133,12 @@ dwm.tagselfg: #000000
 dwm.infonormbg: #ffffff
 dwm.infonormfg: #000000
 
-dwm.infoselbg: #ffffff
-dwm.infoselfg: #000000
-dwm.infoselborder: #000000
+dwm.infoselbg: #000000
+dwm.infoselfg: #ffffff
 
-dwm.taggridbg: #ffffff
-dwm.taggridfg: #000000
-dwm.taggridborder: #ffffff
+dwm.taggridbg: #000000
+dwm.taggridfg: #ffffff
+dwm.taggridborder: #000000
 
 dmenu.background: #ffffff
 dmenu.foreground: #000000
