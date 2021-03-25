@@ -1,5 +1,11 @@
 #!/bin/sh
 
+DARK_MODE_RGB="FFFFFF"
+DARK_MODE_CONKY="#000000"
+
+LIGHT_MODE_RGB="FFFFFF"
+LIGHT_MODE_CONKY="#000000"
+
 ALWAYS="
 Xft.autohint: 0
 Xft.antialias: 1
@@ -44,6 +50,11 @@ dwm.borderpx: 5
 dwm.barborder: 5
 
 dmenu.borderpx: 3
+
+slock.init: #000000
+slock.input: #000000
+slock.failed: #FF6E67
+slock.caps: #BD93F9
 "
 
 DARK_MODE="
@@ -97,7 +108,7 @@ tabbed.normfgcolor:#ffffff
 
 *.background: #000000
 
-st.alpha: 0.60
+st.alpha: 1
 "
 
 LIGHT_MODE="
@@ -151,7 +162,7 @@ tabbed.normbgcolor:#ababab
 tabbed.normfgcolor:#ffffff
 
 *.background: #282a36
-st.alpha: 0.85
+st.alpha: 1
 "
 
 if [ -f $1 ]
@@ -177,10 +188,10 @@ then
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-2.0/gtkrc-2.0
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
-		sed -i "s/own_window_colour =.*/own_window_colour = '#282A36',/g" $XDG_CONFIG_HOME/conky/conky.conf
-		sed -i "s/own_window_colour =.*/own_window_colour = '#282A36',/g" $XDG_CONFIG_HOME/conky/conky2.conf
-		openrgb -c f8f8f2
-		rivalcfg -c FFFFFF --strip-bottom-color FFFFFF --strip-middle-color FFFFFF --strip-top-color FFFFFF
+		#sed -i "s/own_window_colour =.*/own_window_colour = '$LIGHT_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky.conf
+		#sed -i "s/own_window_colour =.*/own_window_colour = '$LIGHT_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky2.conf
+		openrgb -c $LIGHT_MODE_RGB
+		rivalcfg -c $LIGHT_MODE_RGB --strip-bottom-color $LIGHT_MODE_RGB --strip-middle-color $LIGHT_MODE_RGB --strip-top-color $LIGHT_MODE_RGB
 
 	elif [ "$PROMPT" = "Dark" ]
 	then
@@ -200,10 +211,10 @@ then
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-2.0/gtkrc-2.0
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
-		sed -i "s/own_window_colour =.*/own_window_colour = '#000000',/g" $XDG_CONFIG_HOME/conky/conky.conf
-		sed -i "s/own_window_colour =.*/own_window_colour = '#000000',/g" $XDG_CONFIG_HOME/conky/conky2.conf
-		openrgb -c cc0099
-		rivalcfg -c cc0099 --strip-bottom-color cc0099 --strip-middle-color cc0099 --strip-top-color cc0099
+		#sed -i "s/own_window_colour =.*/own_window_colour = '$DARK_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky.conf
+		#sed -i "s/own_window_colour =.*/own_window_colour = '$DARK_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky2.conf
+		openrgb -c $DARK_MODE_RGB
+		rivalcfg -c $DARK_MODE_RGB --strip-bottom-color $DARK_MODE_RGB --strip-middle-color $DARK_MODE_RGB --strip-top-color $DARK_MODE_RGB
 
 	fi
 
@@ -226,10 +237,10 @@ else
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-2.0/gtkrc-2.0
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
-		sed -i "s/own_window_colour =.*/own_window_colour = '#282A36',/g" $XDG_CONFIG_HOME/conky/conky.conf
-		sed -i "s/own_window_colour =.*/own_window_colour = '#282A36',/g" $XDG_CONFIG_HOME/conky/conky2.conf
-		openrgb -c f8f8f2
-		rivalcfg -c f8f8f2 --strip-bottom-color f8f8f2 --strip-middle-color f8f8f2 --strip-top-color f8f8f2
+		#sed -i "s/own_window_colour =.*/own_window_colour = '$LIGHT_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky.conf
+		#sed -i "s/own_window_colour =.*/own_window_colour = '$LIGHT_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky2.conf
+		openrgb -c $LIGHT_MODE_RGB
+		rivalcfg -c $LIGHT_MODE_RGB --strip-bottom-color $LIGHT_MODE_RGB --strip-middle-color $LIGHT_MODE_RGB --strip-top-color $LIGHT_MODE_RGB
 
 	elif [ "$1" = "Dark" -o "$1" = "dark" ] ; then
 		CHOOSED_CONFIG+="$ALWAYS $DARK_MODE"
@@ -248,10 +259,10 @@ else
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-2.0/gtkrc-2.0
 		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
-		sed -i "s/own_window_colour =.*/own_window_colour = '#000000',/g" $XDG_CONFIG_HOME/conky/conky.conf
-		sed -i "s/own_window_colour =.*/own_window_colour = '#000000',/g" $XDG_CONFIG_HOME/conky/conky2.conf
-		openrgb -c cc0039
-		rivalcfg -c cc0099 --strip-bottom-color cc0099 --strip-middle-color cc0099 --strip-top-color cc0099
+		#sed -i "s/own_window_colour =.*/own_window_colour = '$DARK_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky.conf
+		#sed -i "s/own_window_colour =.*/own_window_colour = '$DARK_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky2.conf
+		openrgb -c $DARK_MODE_RGB
+		rivalcfg -c $DARK_MODE_RGB --strip-bottom-color $DARK_MODE_RGB --strip-middle-color $DARK_MODE_RGB --strip-top-color $DARK_MODE_RGB
 
 	elif [ "$1" = "toggle" -o "$1" = "Toggle" ] ; then
 		if grep -q "DARK MODE" $HOME/.config/X11/Xresources

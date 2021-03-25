@@ -8,5 +8,5 @@ export XAUTHORITY=/run/user/1000/Xauthority
 export SHELL=/bin/zsh
 export PATH="$PATH:$(du "/usr/local/bin" | cut -f2 | paste -sd ':'):$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 
-exec wallpaper dynamic lakeside
+exec wallpaper dynamic earth
 fi

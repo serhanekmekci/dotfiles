@@ -1,38 +1,137 @@
-ctrl + k + b
-	switch_xkbdlayout
-XF86AudioMute
-	pamixer -t; pkill -RTMIN+4 blocks
-XF86Audio{Raise,Lower}Volume
-	[ $(pamixer --get-mute) = false ] && pamixer {-i,-d} 1 && pkill -RTMIN+4 blocks && dunstify -t 200 -r 2593 -u normal "Volume $(pamixer --get-volume)%" || dunstify -t 300 "Muted"
-super + ctrl + a
-	openrgb -c 000000 & rivalcfg -c 000000 --strip-bottom-color 000000 --strip-middle-color 000000 --strip-top-color 000000 & slock
-super + shift + t
-	change_mode
-ctrl + shift + s
-	sensory_overload
-super + shift + s
-	menusearx
-super + shift + p
-	passmenu --type
-super + shift + b
-	surf-open
-super + shift + Home
-	surf_history
+# mail
 super + shift + m
 	$TERMINAL -e neomutt
+
+# browser
+super + shift + b
+	surf-open
+
+# read from browser screen
 super + shift + e
 	externalpipe_buffer dmenu_type
+
+# browser history
+super + shift + Home
+	surf_history
+
+# rss
 super + shift + n
 	$TERMINAL -e newsboat
-super + shift + x
-	$TERMINAL -n translate -g 120x34 -e translate
+
+# volume
+XF86AudioMute
+	pamixer -t; pkill -RTMIN+4 blocks
+
+XF86Audio{Raise,Lower}Volume
+	[ $(pamixer --get-mute) = false ] && pamixer {-i,-d} 1 && pkill -RTMIN+4 blocks && dunstify -t 200 -r 2593 -u normal "Volume $(pamixer --get-volume)%" || dunstify -t 300 "Muted"
+
+# password manager
+super + shift + p
+	passmenu --type
+
+# music player
 super + shift + o
 	$TERMINAL -e ncmpcpp
+
+# keyboard layout switcher script
+ctrl + k + b
+	switch_xkbdlayout
+
+# lock
+super + ctrl + a
+	openrgb -c 000000 & rivalcfg -c 000000 --strip-bottom-color 000000 --strip-middle-color 000000 --strip-top-color 000000 & slock
+
+# xresources parser
+super + shift + t
+	change_mode
+
+# tired of colors and having a headache
+ctrl + shift + s
+	sensory_overload
+
+# searx search trough dmenu
+super + shift + s
+	menusearx
+
+# custom translation script
+super + shift + x
+	$TERMINAL -n translate -g 120x34 -e translate
+
+# screenshot
 Print
 	scrot
 control + Print
 	sleep 0.1 && scrot -s
+
+# xkill
 super + x
 	xkill
+
+# toggle vpn
 super + ctrl + w
 	togglewireguard
+
+# dwm
+super + p
+	dmenu_run -c -l 10
+
+super + shift + Return
+	tabbedst
+
+super + b
+	dwmc togglebar
+
+super + {k,j}
+	dwmc focusstack {-,+}1
+
+super + {d,f}
+	dwmc incnmaster {-,+}1
+
+super + {h,l}
+	dwmc setmfact {-,+}0.05
+
+super + Return
+	dwmc zoom
+
+super + {0}
+	dwmc viewall
+
+super + shift + c
+	dwmc killclient
+
+super + shift + f
+	dwmc togglefullscr
+
+super + space
+	dwmc setlayoutex {0,1,2,3,4,5}
+
+super + shift + space
+	dwmc togglefloating
+
+super + shift + q
+	dwmc quit
+
+super + {1,2,3,4,5,6,7,8,9}
+	dwmc viewex {0,1,2,3,4,5,6,7,8}
+super + ctrl + {1,2,3,4,5,6,7,8,9}
+	dwmc toggleviewex {0,1,2,3,4,5,6,7,8}
+super + shift + {1,2,3,4,5,6,7,8,9}
+	dwmc tagex {0,1,2,3,4,5,6,7,8}
+super + shift + {0}
+	dwmc tag ~0
+super + ctrl + shift + {1,2,3,4,5,6,7,8,9}
+	dwmc toggletagex {0,1,2,3,4,5,6,7,8}
+super + alt + {1,2,3,4,5,6,7,8,9}
+	dwmc swaptags {1,2,3,4,5,6,7,8,9}
+
+super + s
+	dwmc togglesticky
+
+super + {u,y}
+	dwmc togglescratch {0,1}
+
+#super + shift + {k,j,l,h}
+#	dwmc switchtag {"SWITCHTAG_UP     | SWITCHTAG_VIEW","SWITCHTAG_DOWN   | SWITCHTAG_VIEW","SWITCHTAG_RIGHT  | SWITCHTAG_VIEW","SWITCHTAG_LEFT   | SWITCHTAG_VIEW"}
+
+super + z
+	dwmc shiftview -1

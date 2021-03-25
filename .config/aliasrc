@@ -10,3 +10,4 @@ alias \
 	ssh-copy-id="ssh-copy-id -i $SSH_ID -o UserKnownHostsFile=$SSH_KNOWN_HOSTS" \
 	scp="scp -F $SSH_CONFIG -i $SSH_ID -o UserKnownHostsFile=$SSH_KNOWN_HOSTS" \
 	wget="wget --hsts-file $XDG_DATA_HOME/wget/wget-hsts" \
+	steam="steamxdg" \
