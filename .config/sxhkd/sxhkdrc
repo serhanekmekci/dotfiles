@@ -73,7 +73,7 @@ super + ctrl + w
 
 # dwm
 super + p
-	dmenu_run -c -l 10
+	dmenu_run_alias -c -l 10
 
 super + shift + Return
 	tabbedst
