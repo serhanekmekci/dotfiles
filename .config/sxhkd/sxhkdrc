@@ -130,8 +130,21 @@ super + s
 super + {u,y}
 	dwmc togglescratch {0,1}
 
-#super + shift + {k,j,l,h}
-#	dwmc switchtag {"SWITCHTAG_UP     | SWITCHTAG_VIEW","SWITCHTAG_DOWN   | SWITCHTAG_VIEW","SWITCHTAG_RIGHT  | SWITCHTAG_VIEW","SWITCHTAG_LEFT   | SWITCHTAG_VIEW"}
+super + ctrl + z
+	dwmc swalstopsel
+
+super + ctrl + s
+	dwmc swalmouse
+
+super + shift + ctrl + {j,k,l,h}
+	{dwmc moveresize "0x 25y 0w 0h", dwmc moveresize "0x -25y 0w 0h", dwmc moveresize "25x 0y 0w 0h", dwmc moveresize "-25x 0y 0w 0h" }
+super + alt + {j,k,l,h}
+	{ dwmc moveresize "0x 0y 0w 25h", dwmc moveresize "0x 0y 0w -25h", dwmc moveresize "0x 0y 25w 0h", dwmc moveresize "0x 0y -25w 0h" }
+
+super + shift + {k,j,l,h}
+	dwmc switchtag {65,66,72,68}
+super + ctrl + {k,j,l,h}
+	dwmc switchtag {97,98,104,100}
 
 super + z
 	dwmc shiftview -1
