@@ -1,10 +1,10 @@
 #!/bin/sh
 
-DARK_MODE_RGB="FFFFFF"
-DARK_MODE_CONKY="#000000"
+DRACULA_RGB="660066"
+DRACULA_CONKY="#282a36"
 
-LIGHT_MODE_RGB="FFFFFF"
-LIGHT_MODE_CONKY="#000000"
+NORD_RGB="5E81AC"
+NORD_CONKY="#2E3340"
 
 ALWAYS="
 Xft.autohint: 0
@@ -24,7 +24,15 @@ st.chscale: 1.05
 
 tabbed.font:Fira Code:style=Regular:size=12:antialias=true
 
-/* ! Dracula Xresources palette */
+dwm.topbar: 1
+dwm.borderpx: 5
+dwm.barborder: 5
+
+dmenu.borderpx: 3
+"
+
+DRACULA="
+/* DRACULA */
 *.color0:     #000000
 *.color1:     #FF5555
 *.color2:     #50FA7B
@@ -44,231 +52,203 @@ tabbed.font:Fira Code:style=Regular:size=12:antialias=true
 *.color15:    #E6E6E6
 
 *.foreground: #f8f8f2
+*.background: #282a36
 
-dwm.topbar: 1
-dwm.borderpx: 5
-dwm.barborder: 5
+dwm.normbgcolor: #282a36
+dwm.normbordercolor: #282a36
+dwm.normfgcolor: #f8f8f2
 
-dmenu.borderpx: 3
+dwm.selfgcolor: #282a36
+dwm.selbordercolor: #E6E6E6
+dwm.selbgcolor: #f8f8f2
+
+dwm.statfg: #f8f8f2
+dwm.statbg: #282a36
+
+dwm.tagnormbg: #282a36
+dwm.tagnormfg: #f8f8f2
+
+dwm.tagselbg: #f8f8f2
+dwm.tagselfg: #282a36
+
+dwm.infonormbg: #282a36
+dwm.infonormfg: #f8f8f2
+
+dwm.infoselbg: #f8f8f2
+dwm.infoselfg: #282a36
+
+dwm.taggridbg: #f8f8f2
+dwm.taggridfg: #282a36
+dwm.taggridborder: #f8f8f2
+
+dmenu.background: #282a36
+dmenu.foreground: #f8f8f2
+dmenu.selbackground: #f8f8f2
+dmenu.selforeground:#282a36
+
+dmenu.highlightbackground: #282a36
+dmenu.higlightselbackground: #f8f8f2
+
+dmenu.highlightforeground: #FF92D0
+dmenu.highlightselforeground: #005577
+
+dmenu.outbackground:#f8f8f2
+dmenu.outforeground:#282a36
+
+tabbed.selbgcolor:#282a36
+tabbed.selfgcolor:#f8f8f2
+
+tabbed.normbgcolor:#f8f8f2
+tabbed.normfgcolor:#282a36
 
 slock.init: #000000
 slock.input: #000000
 slock.failed: #FF6E67
 slock.caps: #BD93F9
+
+st.alpha: 0.90
 "
 
-DARK_MODE="
-/* DARK MODE */
-dwm.normbgcolor: #000000
-dwm.normbordercolor: #000000
-dwm.normfgcolor: #ffffff
+NORD="
+/* NORD */
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
 
-dwm.selfgcolor: #000000
-dwm.selbordercolor: #ababab
-dwm.selbgcolor: #ffffff
+*.foreground:   nord4
+*.background:   nord0
+*.cursorColor:  nord4
+*fading: 35
+*fadeColor: nord3
 
-dwm.statfg: #ffffff
-dwm.statbg: #000000
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6
 
-dwm.tagnormbg: #000000
-dwm.tagnormfg: #ffffff
+dwm.normbgcolor: nord0
+dwm.normfgcolor: nord4
+dwm.normbordercolor: nord0
 
-dwm.tagselbg: #ffffff
-dwm.tagselfg: #000000
+dwm.selbgcolor: nord0
+dwm.selfgcolor: nord4
+dwm.selbordercolor: nord4
 
-dwm.infonormbg: #000000
-dwm.infonormfg: #ffffff
+dwm.statfg: nord4
+dwm.statbg: nord0
 
-dwm.infoselbg: #ffffff
-dwm.infoselfg: #000000
+dwm.tagnormbg: nord0
+dwm.tagnormfg: nord4
 
-dwm.taggridbg: #ffffff
-dwm.taggridfg: #000000
-dwm.taggridborder: #ffffff
+dwm.tagselbg: nord0
+dwm.tagselfg: nord4
 
-dmenu.background: #000000
-dmenu.foreground: #ffffff
-dmenu.selbackground: #ffffff
-dmenu.selforeground:#000000
+dwm.infonormbg: nord0
+dwm.infonormfg: nord4
 
-dmenu.highlightbackground: #000000
-dmenu.higlightselbackground: #ffffff
+dwm.infoselbg: nord4
+dwm.infoselfg: nord0
 
-dmenu.highlightforeground: #FF92D0
-dmenu.highlightselforeground: #005577
+dwm.taggridbg: nord4
+dwm.taggridfg: nord0
+dwm.taggridborder: nord4
 
-dmenu.outbackground:#ffffff
-dmenu.outforeground:#000000
+dmenu.background: nord0
+dmenu.foreground: nord4
+dmenu.selbackground: nord4
+dmenu.selforeground: nord0
 
-tabbed.selbgcolor:#000000
-tabbed.selfgcolor:#ffffff
+dmenu.highlightbackground: nord0
+dmenu.higlightselbackground: nord4
 
-tabbed.normbgcolor:#ababab
-tabbed.normfgcolor:#ffffff
+dmenu.highlightforeground: nord8
+dmenu.highlightselforeground: nord10
 
-*.background: #000000
+dmenu.outbackground: nord0
+dmenu.outforeground: nord4
+
+tabbed.selbgcolor: nord0
+tabbed.selfgcolor: nord4
+
+tabbed.normbgcolor: nord4
+tabbed.normfgcolor: nord0
+
+slock.init: nord0
+slock.input: nord0
+slock.failed: nord11
+slock.caps: nord14
 
 st.alpha: 0.85
 "
 
-LIGHT_MODE="
-/* LIGHT MODE */
-dwm.normbgcolor: #ffffff
-dwm.normfgcolor: #000000
-dwm.normbordercolor: #000000
+[ -f $1 ] && PROMPT="$(echo -e "Nord\nDracula" | dmenu -p "Change mode to:" -i -g 2 -l 2 -c)"
 
-dwm.selbgcolor: #000000
-dwm.selfgcolor: #ffffff
-dwm.selbordercolor: #ffffff
-
-dwm.statfg: #000000
-dwm.statbg: #ffffff
-
-dwm.tagnormbg: #ffffff
-dwm.tagnormfg: #000000
-
-dwm.tagselbg: #ffffff
-dwm.tagselfg: #000000
-
-dwm.infonormbg: #ffffff
-dwm.infonormfg: #000000
-
-dwm.infoselbg: #000000
-dwm.infoselfg: #ffffff
-
-dwm.taggridbg: #000000
-dwm.taggridfg: #ffffff
-dwm.taggridborder: #000000
-
-dmenu.background: #ffffff
-dmenu.foreground: #000000
-dmenu.selbackground: #000000
-dmenu.selforeground:#ffffff
-
-dmenu.highlightbackground: #ffffff
-dmenu.higlightselbackground: #000000
-
-dmenu.highlightforeground: #005577
-dmenu.highlightselforeground:#FF92D0
-
-dmenu.outbackground:#ffffff
-dmenu.outforeground:#000000
-
-tabbed.selbgcolor:#ffffff
-tabbed.selfgcolor:#000000
-
-tabbed.normbgcolor:#ababab
-tabbed.normfgcolor:#ffffff
-
-*.background: #282a36
-st.alpha: 0.85
-"
-
-if [ -f $1 ]
-then
-
-	PROMPT="$(echo -e "Light\nDark" | dmenu -p "Change mode to:" -i -g 2 -l 2 -c)"
-
-	if [ "$PROMPT" = "Light" ]
-	then
-		CHOOSED_CONFIG+="$ALWAYS $LIGHT_MODE"
+	if [ "$PROMPT" = "Nord" -o "$1" = "Nord" ] ;then
+		CHOOSED_CONFIG+="$ALWAYS $NORD"
 		echo "$CHOOSED_CONFIG" > $HOME/.config/X11/Xresources &&
-		xrdb -merge $HOME/.config/X11/Xresources &&
+		xrdb $HOME/.config/X11/Xresources &&
 		dwmc reload &&
 		kill -s USR1 $(pidof st) &&
 		kill -s USR1 $(pidof tabbed) &&
 
-		if ls /tmp/nvimsocket-* 1> /dev/null 2>&1; then
-			cmdvim "AirlineTheme sol"
+		if ls /tmp/nvimsocket-* 1> /dev/null 2>&1 ;then
+			cmdvim "AirlineTheme nord"
+			cmdvim "colorscheme nord"
 		fi
 
-		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"sol"/' $HOME/.config/nvim/init.vim
+		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"nord"/' $HOME/.config/nvim/init.vim
+		sed -i 's/^\(colorscheme\).*$/\1 nord/' $HOME/.config/nvim/init.vim
 
-		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-2.0/gtkrc-2.0
-		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
-		sed -i "s/own_window_colour =.*/own_window_colour = '$LIGHT_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky.conf
-		sed -i "s/own_window_colour =.*/own_window_colour = '$LIGHT_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky2.conf
-		openrgb -c $LIGHT_MODE_RGB
-		rivalcfg -c $LIGHT_MODE_RGB --strip-bottom-color $LIGHT_MODE_RGB --strip-middle-color $LIGHT_MODE_RGB --strip-top-color $LIGHT_MODE_RGB
+		sed -i "s/own_window_colour =.*/own_window_colour = '$NORD_CONKY',/g" $XDG_CONFIG_HOME/conky/conky.conf
+		sed -i "s/own_window_colour =.*/own_window_colour = '$NORD_CONKY',/g" $XDG_CONFIG_HOME/conky/conky2.conf
+		openrgb -c $NORD_RGB
+		rivalcfg -c $NORD_RGB --strip-bottom-color $NORD_RGB --strip-middle-color $NORD_RGB --strip-top-color $NORD_RGB
 
-	elif [ "$PROMPT" = "Dark" ]
-	then
-		CHOOSED_CONFIG+="$ALWAYS $DARK_MODE"
+	elif [ "$PROMPT" = "Dracula" -o "$1" = "dracula" ] ;then
+		CHOOSED_CONFIG+="$ALWAYS $DRACULA"
 		echo "$CHOOSED_CONFIG" > $HOME/.config/X11/Xresources &&
-		xrdb -merge $HOME/.config/X11/Xresources &&
+		xrdb $HOME/.config/X11/Xresources &&
 		dwmc reload &&
 		kill -s USR1 $(pidof st) &&
 		kill -s USR1 $(pidof tabbed) &&
 
-		if ls /tmp/nvimsocket-* 1> /dev/null 2>&1; then
-			cmdvim "AirlineTheme minimalist"
+		if ls /tmp/nvimsocket-* 1> /dev/null 2>&1 ;then
+			cmdvim "AirlineTheme dracula"
+			cmdvim "colorscheme dracula"
 		fi
 
-		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"minimalist"/' $HOME/.config/nvim/init.vim
+		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"dracula"/' $HOME/.config/nvim/init.vim
+		sed -i 's/^\(colorscheme\).*$/\1 dracula/' $HOME/.config/nvim/init.vim
 
-		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-2.0/gtkrc-2.0
-		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-3.0/settings.ini
 		genzathurarc > ~/.config/zathura/zathurarc
-		sed -i "s/own_window_colour =.*/own_window_colour = '$DARK_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky.conf
-		sed -i "s/own_window_colour =.*/own_window_colour = '$DARK_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky2.conf
-		openrgb -c $DARK_MODE_RGB
-		rivalcfg -c $DARK_MODE_RGB --strip-bottom-color $DARK_MODE_RGB --strip-middle-color $DARK_MODE_RGB --strip-top-color $DARK_MODE_RGB
-
+		sed -i "s/own_window_colour =.*/own_window_colour = '$DRACULA_CONKY',/g" $XDG_CONFIG_HOME/conky/conky.conf
+		sed -i "s/own_window_colour =.*/own_window_colour = '$DRACULA_CONKY',/g" $XDG_CONFIG_HOME/conky/conky2.conf
+		openrgb -c $DRACULA_RGB
+		rivalcfg -c $DRACULA_RGB --strip-bottom-color $DRACULA_RGB --strip-middle-color $DRACULA_RGB --strip-top-color $DRACULA_RGB
 	fi
-
-else
-
-	if [ "$1" = "Light" -o "$1" = "light" ] ; then
-		CHOOSED_CONFIG+="$ALWAYS $LIGHT_MODE"
-		echo "$CHOOSED_CONFIG" > $HOME/.config/X11/Xresources &&
-		xrdb -merge $HOME/.config/X11/Xresources &&
-		dwmc reload &&
-		kill -s USR1 $(pidof st) &&
-		kill -s USR1 $(pidof tabbed) &&
-
-		if ls /tmp/nvimsocket-* 1> /dev/null 2>&1; then
-			cmdvim "AirlineTheme sol"
-		fi
-
-		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"sol"/' $HOME/.config/nvim/init.vim
-
-		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-2.0/gtkrc-2.0
-		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Arc"/' $HOME/.config/gtk-3.0/settings.ini
-		genzathurarc > ~/.config/zathura/zathurarc
-		sed -i "s/own_window_colour =.*/own_window_colour = '$LIGHT_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky.conf
-		sed -i "s/own_window_colour =.*/own_window_colour = '$LIGHT_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky2.conf
-		openrgb -c $LIGHT_MODE_RGB
-		rivalcfg -c $LIGHT_MODE_RGB --strip-bottom-color $LIGHT_MODE_RGB --strip-middle-color $LIGHT_MODE_RGB --strip-top-color $LIGHT_MODE_RGB
-
-	elif [ "$1" = "Dark" -o "$1" = "dark" ] ; then
-		CHOOSED_CONFIG+="$ALWAYS $DARK_MODE"
-		echo "$CHOOSED_CONFIG" > $HOME/.config/X11/Xresources &&
-		xrdb -merge $HOME/.config/X11/Xresources &&
-		dwmc reload &&
-		kill -s USR1 $(pidof st) &&
-		kill -s USR1 $(pidof tabbed) &&
-
-		if ls /tmp/nvimsocket-* 1> /dev/null 2>&1; then
-			cmdvim "AirlineTheme minimalist"
-		fi
-
-		sed -i 's/^\(let g:airline_theme\s*=\s*\).*$/\1"minimalist"/' $HOME/.config/nvim/init.vim
-
-		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-2.0/gtkrc-2.0
-		sed -i 's/^\(gtk-theme-name \s*=\s*\).*$/\1"Shades-of-gray"/' $HOME/.config/gtk-3.0/settings.ini
-		genzathurarc > ~/.config/zathura/zathurarc
-		sed -i "s/own_window_colour =.*/own_window_colour = '$DARK_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky.conf
-		sed -i "s/own_window_colour =.*/own_window_colour = '$DARK_MODE_CONKY',/g" $XDG_CONFIG_HOME/conky/conky2.conf
-		openrgb -c $DARK_MODE_RGB
-		rivalcfg -c $DARK_MODE_RGB --strip-bottom-color $DARK_MODE_RGB --strip-middle-color $DARK_MODE_RGB --strip-top-color $DARK_MODE_RGB
-
-	elif [ "$1" = "toggle" -o "$1" = "Toggle" ] ; then
-		if grep -q "DARK MODE" $HOME/.config/X11/Xresources
-		then
-			change_mode light
-		else
-			change_mode dark
-		fi
-	fi
-fi

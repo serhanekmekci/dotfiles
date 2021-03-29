@@ -6,4 +6,4 @@ case $BUTTON in
         6) setsid -f "$TERMINAL" -e "$EDITOR" "$0";;
 esac
 
-[ -d "/proc/sys/net/ipv4/conf/$DEV_NAME/" ] && echo " "
+[ -d "/proc/sys/net/ipv4/conf/$DEV_NAME/" ] && echo ""

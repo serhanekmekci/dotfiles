@@ -3,3 +3,9 @@
 	name = Serhan Ekmekçi
 [core]
 	sshCommand = ssh -F $SSH_CONFIG -i $SSH_ID -o UserKnownHostsFile=$SSH_KNOWN_HOSTS
+[sendemail]
+	from = serhan@ekmekci.me
+	smtpserver = mail.ekmekci.me
+	smtpserverport = 587
+	smtpuser = serhan
+	smtpencryption = tls
